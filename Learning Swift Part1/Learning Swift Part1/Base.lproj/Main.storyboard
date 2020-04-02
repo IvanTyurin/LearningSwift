@@ -21,6 +21,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clipart-crossed-eyes-1" translatesAutoresizingMaskIntoConstraints="NO" id="jOA-u0-Cx4">
                                         <rect key="frame" x="20" y="20" width="162" height="323"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="wFJ-RV-brL" appends="YES" id="4Cy-Cc-xtj"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,6 +41,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images (1)" translatesAutoresizingMaskIntoConstraints="NO" id="2J1-J2-Iqc">
                                         <rect key="frame" x="20" y="20" width="162" height="323"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="fYv-nc-gLq" appends="YES" id="wei-VW-H5h"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,6 +61,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images (2)" translatesAutoresizingMaskIntoConstraints="NO" id="MBm-L6-ure">
                                         <rect key="frame" x="20" y="20" width="162" height="323"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="kbk-eJ-EEY" appends="YES" id="34g-4z-0vU"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,6 +81,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji-emoticon-shape-happy-face-smiley_26-512" translatesAutoresizingMaskIntoConstraints="NO" id="feS-mp-wZu">
                                         <rect key="frame" x="20" y="20" width="162" height="323"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="XAJ-Np-aTG" appends="YES" id="ZGM-7r-9WN"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,8 +118,34 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="blue" destination="feS-mp-wZu" id="Qwh-WP-5zN"/>
+                        <outlet property="green" destination="MBm-L6-ure" id="vMk-Ul-5sr"/>
+                        <outlet property="red" destination="jOA-u0-Cx4" id="fIS-Ee-Hdu"/>
+                        <outlet property="yellow" destination="2J1-J2-Iqc" id="iDH-nS-gjd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wFJ-RV-brL" userLabel="redImageRecognizer">
+                    <connections>
+                        <action selector="redImageClicked:" destination="BYZ-38-t0r" id="J0C-TF-8LY"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fYv-nc-gLq" userLabel="yellowImageRecognizer">
+                    <connections>
+                        <action selector="yellowImageClicked:" destination="BYZ-38-t0r" id="2Kn-hq-bQH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kbk-eJ-EEY" userLabel="greenImageRecognizer">
+                    <connections>
+                        <action selector="greenImageClicked:" destination="BYZ-38-t0r" id="Yhb-YZ-3Qv"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="XAJ-Np-aTG" userLabel="blueImageRecognizer">
+                    <connections>
+                        <action selector="blueImageClicked:" destination="BYZ-38-t0r" id="DKR-Oy-VLb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.58695652173915"/>
         </scene>
