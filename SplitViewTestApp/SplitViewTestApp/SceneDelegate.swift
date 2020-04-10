@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Learning Swift Part 2
+//  SplitViewTestApp
 //
-//  Created by Ivan Tyurin on 01.04.2020.
+//  Created by Ivan Tyurin on 06.04.2020.
 //  Copyright © 2020 Ivan Tyurin. All rights reserved.
 //
 
@@ -17,21 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard
-            let splitViewController = window?.rootViewController as? UISplitViewController,
-            let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
-            let headViewController = leftNavController.viewControllers.first as? HeadViewController,
-            let detailViewController = (splitViewController.viewControllers.last as? UINavigationController)?.topViewController as? DetailViewController
-        else {
-            fatalError()
-        }
-        let firstPet = headViewController.pets.first
-        detailViewController.pet = firstPet
-        
-        headViewController.delegate = detailViewController
-        
-        detailViewController.navigationItem.leftItemsSupplementBackButton = true
-        detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

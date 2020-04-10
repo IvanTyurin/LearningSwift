@@ -7,33 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0941399E2434A57800343EB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941399D2434A57800343EB9 /* AppDelegate.swift */; };
-		094139A02434A57800343EB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941399F2434A57800343EB9 /* SceneDelegate.swift */; };
-		094139A52434A57800343EB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094139A32434A57800343EB9 /* Main.storyboard */; };
-		094139A82434A57800343EB9 /* Learning_Swift_Part_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094139A62434A57800343EB9 /* Learning_Swift_Part_2.xcdatamodeld */; };
-		094139AA2434A57F00343EB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094139A92434A57F00343EB9 /* Assets.xcassets */; };
-		094139AD2434A57F00343EB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094139AB2434A57F00343EB9 /* LaunchScreen.storyboard */; };
-		09B8A94B2440A81700CEC30D /* HeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8A94A2440A81700CEC30D /* HeadViewController.swift */; };
-		09B8A94D2440ABB000CEC30D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8A94C2440ABB000CEC30D /* DetailViewController.swift */; };
-		09B8A9532440B6BA00CEC30D /* PowerPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B8A9522440B6BA00CEC30D /* PowerPet.swift */; };
+		09A2DEA6243B601600CB2D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2DEA5243B601600CB2D51 /* AppDelegate.swift */; };
+		09A2DEA8243B601600CB2D51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2DEA7243B601600CB2D51 /* SceneDelegate.swift */; };
+		09A2DEAD243B601600CB2D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A2DEAB243B601600CB2D51 /* Main.storyboard */; };
+		09A2DEB0243B601700CB2D51 /* SplitViewTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09A2DEAE243B601700CB2D51 /* SplitViewTestApp.xcdatamodeld */; };
+		09A2DEB2243B602000CB2D51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A2DEB1243B602000CB2D51 /* Assets.xcassets */; };
+		09A2DEB5243B602000CB2D51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A2DEB3243B602000CB2D51 /* LaunchScreen.storyboard */; };
+		09A2DEBD243B613A00CB2D51 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A2DEBC243B613A00CB2D51 /* SplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0941399A2434A57800343EB9 /* Learning Swift Part 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning Swift Part 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0941399D2434A57800343EB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0941399F2434A57800343EB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		094139A42434A57800343EB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		094139A72434A57800343EB9 /* Learning_Swift_Part_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Learning_Swift_Part_2.xcdatamodel; sourceTree = "<group>"; };
-		094139A92434A57F00343EB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		094139AC2434A57F00343EB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		094139AE2434A57F00343EB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09B8A94A2440A81700CEC30D /* HeadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadViewController.swift; sourceTree = "<group>"; };
-		09B8A94C2440ABB000CEC30D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		09B8A9522440B6BA00CEC30D /* PowerPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerPet.swift; sourceTree = "<group>"; };
+		09A2DEA2243B601600CB2D51 /* SplitViewTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitViewTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A2DEA5243B601600CB2D51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		09A2DEA7243B601600CB2D51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		09A2DEAC243B601600CB2D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09A2DEAF243B601700CB2D51 /* SplitViewTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SplitViewTestApp.xcdatamodel; sourceTree = "<group>"; };
+		09A2DEB1243B602000CB2D51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		09A2DEB4243B602000CB2D51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		09A2DEB6243B602000CB2D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09A2DEBC243B613A00CB2D51 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		094139972434A57800343EB9 /* Frameworks */ = {
+		09A2DE9F243B601600CB2D51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,75 +39,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		094139912434A57800343EB9 = {
+		09A2DE99243B601600CB2D51 = {
 			isa = PBXGroup;
 			children = (
-				0941399C2434A57800343EB9 /* Learning Swift Part 2 */,
-				0941399B2434A57800343EB9 /* Products */,
+				09A2DEA4243B601600CB2D51 /* SplitViewTestApp */,
+				09A2DEA3243B601600CB2D51 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0941399B2434A57800343EB9 /* Products */ = {
+		09A2DEA3243B601600CB2D51 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0941399A2434A57800343EB9 /* Learning Swift Part 2.app */,
+				09A2DEA2243B601600CB2D51 /* SplitViewTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0941399C2434A57800343EB9 /* Learning Swift Part 2 */ = {
+		09A2DEA4243B601600CB2D51 /* SplitViewTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				0941399D2434A57800343EB9 /* AppDelegate.swift */,
-				0941399F2434A57800343EB9 /* SceneDelegate.swift */,
-				094139A32434A57800343EB9 /* Main.storyboard */,
-				09B8A94C2440ABB000CEC30D /* DetailViewController.swift */,
-				09B8A94A2440A81700CEC30D /* HeadViewController.swift */,
-				094139A92434A57F00343EB9 /* Assets.xcassets */,
-				094139AB2434A57F00343EB9 /* LaunchScreen.storyboard */,
-				094139AE2434A57F00343EB9 /* Info.plist */,
-				094139A62434A57800343EB9 /* Learning_Swift_Part_2.xcdatamodeld */,
-				09B8A9522440B6BA00CEC30D /* PowerPet.swift */,
+				09A2DEA5243B601600CB2D51 /* AppDelegate.swift */,
+				09A2DEA7243B601600CB2D51 /* SceneDelegate.swift */,
+				09A2DEBC243B613A00CB2D51 /* SplitViewController.swift */,
+				09A2DEAB243B601600CB2D51 /* Main.storyboard */,
+				09A2DEB1243B602000CB2D51 /* Assets.xcassets */,
+				09A2DEB3243B602000CB2D51 /* LaunchScreen.storyboard */,
+				09A2DEB6243B602000CB2D51 /* Info.plist */,
+				09A2DEAE243B601700CB2D51 /* SplitViewTestApp.xcdatamodeld */,
 			);
-			path = "Learning Swift Part 2";
+			path = SplitViewTestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		094139992434A57800343EB9 /* Learning Swift Part 2 */ = {
+		09A2DEA1243B601600CB2D51 /* SplitViewTestApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 094139B12434A58000343EB9 /* Build configuration list for PBXNativeTarget "Learning Swift Part 2" */;
+			buildConfigurationList = 09A2DEB9243B602000CB2D51 /* Build configuration list for PBXNativeTarget "SplitViewTestApp" */;
 			buildPhases = (
-				094139962434A57800343EB9 /* Sources */,
-				094139972434A57800343EB9 /* Frameworks */,
-				094139982434A57800343EB9 /* Resources */,
+				09A2DE9E243B601600CB2D51 /* Sources */,
+				09A2DE9F243B601600CB2D51 /* Frameworks */,
+				09A2DEA0243B601600CB2D51 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Learning Swift Part 2";
-			productName = "Learning Swift Part 2";
-			productReference = 0941399A2434A57800343EB9 /* Learning Swift Part 2.app */;
+			name = SplitViewTestApp;
+			productName = SplitViewTestApp;
+			productReference = 09A2DEA2243B601600CB2D51 /* SplitViewTestApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		094139922434A57800343EB9 /* Project object */ = {
+		09A2DE9A243B601600CB2D51 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Ivan Tyurin";
 				TargetAttributes = {
-					094139992434A57800343EB9 = {
+					09A2DEA1243B601600CB2D51 = {
 						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
-			buildConfigurationList = 094139952434A57800343EB9 /* Build configuration list for PBXProject "Learning Swift Part 2" */;
+			buildConfigurationList = 09A2DE9D243B601600CB2D51 /* Build configuration list for PBXProject "SplitViewTestApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -119,58 +113,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 094139912434A57800343EB9;
-			productRefGroup = 0941399B2434A57800343EB9 /* Products */;
+			mainGroup = 09A2DE99243B601600CB2D51;
+			productRefGroup = 09A2DEA3243B601600CB2D51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				094139992434A57800343EB9 /* Learning Swift Part 2 */,
+				09A2DEA1243B601600CB2D51 /* SplitViewTestApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		094139982434A57800343EB9 /* Resources */ = {
+		09A2DEA0243B601600CB2D51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				094139AD2434A57F00343EB9 /* LaunchScreen.storyboard in Resources */,
-				094139AA2434A57F00343EB9 /* Assets.xcassets in Resources */,
-				094139A52434A57800343EB9 /* Main.storyboard in Resources */,
+				09A2DEB5243B602000CB2D51 /* LaunchScreen.storyboard in Resources */,
+				09A2DEB2243B602000CB2D51 /* Assets.xcassets in Resources */,
+				09A2DEAD243B601600CB2D51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		094139962434A57800343EB9 /* Sources */ = {
+		09A2DE9E243B601600CB2D51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				094139A82434A57800343EB9 /* Learning_Swift_Part_2.xcdatamodeld in Sources */,
-				09B8A9532440B6BA00CEC30D /* PowerPet.swift in Sources */,
-				0941399E2434A57800343EB9 /* AppDelegate.swift in Sources */,
-				09B8A94D2440ABB000CEC30D /* DetailViewController.swift in Sources */,
-				09B8A94B2440A81700CEC30D /* HeadViewController.swift in Sources */,
-				094139A02434A57800343EB9 /* SceneDelegate.swift in Sources */,
+				09A2DEB0243B601700CB2D51 /* SplitViewTestApp.xcdatamodeld in Sources */,
+				09A2DEA6243B601600CB2D51 /* AppDelegate.swift in Sources */,
+				09A2DEA8243B601600CB2D51 /* SceneDelegate.swift in Sources */,
+				09A2DEBD243B613A00CB2D51 /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		094139A32434A57800343EB9 /* Main.storyboard */ = {
+		09A2DEAB243B601600CB2D51 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				094139A42434A57800343EB9 /* Base */,
+				09A2DEAC243B601600CB2D51 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		094139AB2434A57F00343EB9 /* LaunchScreen.storyboard */ = {
+		09A2DEB3243B602000CB2D51 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				094139AC2434A57F00343EB9 /* Base */,
+				09A2DEB4243B602000CB2D51 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -178,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		094139AF2434A58000343EB9 /* Debug */ = {
+		09A2DEB7243B602000CB2D51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -238,7 +230,7 @@
 			};
 			name = Debug;
 		};
-		094139B02434A58000343EB9 /* Release */ = {
+		09A2DEB8243B602000CB2D51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -292,36 +284,36 @@
 			};
 			name = Release;
 		};
-		094139B22434A58000343EB9 /* Debug */ = {
+		09A2DEBA243B602000CB2D51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25J9GRY823;
-				INFOPLIST_FILE = "Learning Swift Part 2/Info.plist";
+				INFOPLIST_FILE = SplitViewTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.ivantyurin.Learning-Swift-Part-2";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ivantyurin.SplitViewTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		094139B32434A58000343EB9 /* Release */ = {
+		09A2DEBB243B602000CB2D51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25J9GRY823;
-				INFOPLIST_FILE = "Learning Swift Part 2/Info.plist";
+				INFOPLIST_FILE = SplitViewTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.ivantyurin.Learning-Swift-Part-2";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.ivantyurin.SplitViewTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,20 +323,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		094139952434A57800343EB9 /* Build configuration list for PBXProject "Learning Swift Part 2" */ = {
+		09A2DE9D243B601600CB2D51 /* Build configuration list for PBXProject "SplitViewTestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				094139AF2434A58000343EB9 /* Debug */,
-				094139B02434A58000343EB9 /* Release */,
+				09A2DEB7243B602000CB2D51 /* Debug */,
+				09A2DEB8243B602000CB2D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		094139B12434A58000343EB9 /* Build configuration list for PBXNativeTarget "Learning Swift Part 2" */ = {
+		09A2DEB9243B602000CB2D51 /* Build configuration list for PBXNativeTarget "SplitViewTestApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				094139B22434A58000343EB9 /* Debug */,
-				094139B32434A58000343EB9 /* Release */,
+				09A2DEBA243B602000CB2D51 /* Debug */,
+				09A2DEBB243B602000CB2D51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -352,17 +344,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		094139A62434A57800343EB9 /* Learning_Swift_Part_2.xcdatamodeld */ = {
+		09A2DEAE243B601700CB2D51 /* SplitViewTestApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				094139A72434A57800343EB9 /* Learning_Swift_Part_2.xcdatamodel */,
+				09A2DEAF243B601700CB2D51 /* SplitViewTestApp.xcdatamodel */,
 			);
-			currentVersion = 094139A72434A57800343EB9 /* Learning_Swift_Part_2.xcdatamodel */;
-			path = Learning_Swift_Part_2.xcdatamodeld;
+			currentVersion = 09A2DEAF243B601700CB2D51 /* SplitViewTestApp.xcdatamodel */;
+			path = SplitViewTestApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 094139922434A57800343EB9 /* Project object */;
+	rootObject = 09A2DE9A243B601600CB2D51 /* Project object */;
 }
