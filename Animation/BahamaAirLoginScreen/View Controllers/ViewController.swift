@@ -41,12 +41,28 @@ class ViewController: UIViewController {
    }
 
   override func viewDidAppear(_ animated: Bool) {
-     super.viewDidAppear(animated)
+    super.viewDidAppear(animated)
 
+    headerLabelCenterConstraint.constant = 0
     UIView.animate(withDuration: 0.5) {
       [weak self] in self?.view.layoutIfNeeded()
     }
     
+    usernameTextFieldCenterConstraint.constant = 0
+    UIView.animate(withDuration: 0.5, delay: 0.3, options: [], animations: {
+      [weak self] in self?.view.layoutIfNeeded()
+    }, completion: nil)
+    
+    passwordTextFieldCenterConstraint.constant = 0
+    UIView.animate(withDuration: 0.5, delay: 0.4, options: [], animations: {
+      [weak self] in self?.view.layoutIfNeeded()
+    }, completion: nil)
+    
+    UIView.animate(withDuration: 1.0, delay: 1.2, options: [.curveEaseInOut, .repeat, .autoreverse] , animations: {
+      [weak self] in self?.loginButton.backgroundColor = .systemYellow
+    }, completion: nil)
+    
+    animatedClouds()
    }
 
    override func viewDidLoad() {
@@ -77,6 +93,33 @@ class ViewController: UIViewController {
     status.addSubview(label)
   }
 
+  private func animatedClouds() {
+    let options: UIView.AnimationOptions = [.curveEaseInOut, .repeat, .autoreverse]
+    
+    UIView.animate(withDuration: 2.9, delay: 0, options: options, animations: {
+      [weak self] in
+        self?.cloud1ImageView.frame.size.height *= 1.18
+        self?.cloud1ImageView.frame.size.width *= 1.18
+    }, completion: nil)
+    
+    UIView.animate(withDuration: 3.0, delay: 0.2, options: options, animations: {
+      [weak self] in
+        self?.cloud2ImageView.frame.size.height *= 1.28
+        self?.cloud2ImageView.frame.size.width *= 1.28
+    }, completion: nil)
+    
+    UIView.animate(withDuration: 2.4, delay: 0.1, options: options, animations: {
+      [weak self] in
+        self?.cloud3ImageView.frame.size.height *= 1.15
+        self?.cloud3ImageView.frame.size.width *= 1.15
+    }, completion: nil)
+    
+    UIView.animate(withDuration: 3.2, delay: 0.5, options: options, animations: {
+      [weak self] in
+        self?.cloud4ImageView.frame.size.height *= 1.23
+        self?.cloud4ImageView.frame.size.width *= 1.23
+    }, completion: nil)
+  }
 
 // MARK: - IBActions
 
