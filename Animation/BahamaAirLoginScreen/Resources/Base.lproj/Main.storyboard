@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ymW-m2-oaD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YWT-NY-DTk">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,13 +10,14 @@
         <!--Login View Controller-->
         <scene sceneID="VJa-rV-nhT">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C98-Tt-797" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LoginViewController" title="Login View Controller" id="ymW-m2-oaD" customClass="ViewController" customModule="Bahama_Air" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sfo-ou-pci">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="VBT-q7-G7q" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud 1" translatesAutoresizingMaskIntoConstraints="NO" id="XuG-j1-Mo2" userLabel="Cloud 1 Image View">
@@ -92,7 +93,8 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="login" destination="ymW-m2-oaD" eventType="touchUpInside" id="qdQ-zd-PDz"/>
+                                    <action selector="logInButtonClicked:" destination="ymW-m2-oaD" eventType="touchUpInside" id="iNr-ar-Fc1"/>
+                                    <action selector="login" destination="ymW-m2-oaD" eventType="touchUpInside" id="jgp-EH-MO4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,6 +120,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Na-e6-eC2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="A2x-BC-HJy"/>
                     <connections>
                         <outlet property="cloud1ImageView" destination="XuG-j1-Mo2" id="uyD-qR-gz2"/>
                         <outlet property="cloud1LeadingConstraint" destination="fwp-kC-n9C" id="Eth-ae-81v"/>
@@ -137,9 +140,114 @@
                         <outlet property="usernameTextFieldCenterConstraint" destination="tk8-Hr-PS8" id="qIE-kB-hqX"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C98-Tt-797" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262.5" y="245"/>
+            <point key="canvasLocation" x="1764" y="244"/>
+        </scene>
+        <!--Water Glasses Controller-->
+        <scene sceneID="9N2-of-JJA">
+            <objects>
+                <viewController id="YWT-NY-DTk" customClass="WaterGlassesController" customModule="Bahama_Air" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8BB-Wb-FIO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFh-TW-BS5" customClass="PushButton" customModule="Bahama_Air" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="383.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5bl-Us-NJO"/>
+                                    <constraint firstAttribute="height" constant="100" id="cYP-rU-Dd6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushButtonPressed:" destination="YWT-NY-DTk" eventType="touchUpInside" id="XUS-iN-CuA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Mb-Vn-nZP" customClass="PushButton" customModule="Bahama_Air" customModuleProvider="target">
+                                <rect key="frame" x="157.5" y="503.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4eh-Dr-r9v"/>
+                                    <constraint firstAttribute="height" constant="60" id="Iki-Vo-dnB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isAddButton" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pushButtonPressed:" destination="YWT-NY-DTk" eventType="touchUpInside" id="Zzz-Zv-rEJ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TU4-BQ-eyD" customClass="CounterView" customModule="Bahama_Air" customModuleProvider="target">
+                                <rect key="frame" x="59.5" y="67.5" width="256" height="256"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a9-tc-lE9">
+                                        <rect key="frame" x="117" y="106.5" width="22" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="GTt-Dt-s4t"/>
+                                    <constraint firstAttribute="height" constant="256" id="fsI-Xo-ncU"/>
+                                    <constraint firstItem="8a9-tc-lE9" firstAttribute="centerY" secondItem="TU4-BQ-eyD" secondAttribute="centerY" id="ldQ-yi-hfb"/>
+                                    <constraint firstItem="8a9-tc-lE9" firstAttribute="centerX" secondItem="TU4-BQ-eyD" secondAttribute="centerX" id="pwv-yG-ACK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pS-Pn-sTC">
+                                <rect key="frame" x="246" y="603" width="95" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Анимации"/>
+                                <connections>
+                                    <segue destination="ymW-m2-oaD" kind="show" id="sIv-2c-s4D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5Mb-Vn-nZP" firstAttribute="centerY" secondItem="8BB-Wb-FIO" secondAttribute="centerY" constant="200" id="BL0-ie-oC5"/>
+                            <constraint firstItem="TU4-BQ-eyD" firstAttribute="centerX" secondItem="8BB-Wb-FIO" secondAttribute="centerX" id="LdH-Pb-ARP"/>
+                            <constraint firstItem="TFh-TW-BS5" firstAttribute="top" secondItem="TU4-BQ-eyD" secondAttribute="bottom" constant="60" id="dCh-2T-pd5"/>
+                            <constraint firstItem="TFh-TW-BS5" firstAttribute="centerY" secondItem="8BB-Wb-FIO" secondAttribute="centerY" constant="100" id="vxF-NM-TRf"/>
+                            <constraint firstItem="5Mb-Vn-nZP" firstAttribute="centerX" secondItem="8BB-Wb-FIO" secondAttribute="centerX" id="xFF-im-Bl5"/>
+                            <constraint firstItem="TFh-TW-BS5" firstAttribute="centerX" secondItem="8BB-Wb-FIO" secondAttribute="centerX" id="zuF-tG-0dw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9bU-Tx-ZK0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oVx-Cv-8Fv"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="8a9-tc-lE9" id="W5J-IL-q3c"/>
+                        <outlet property="counterView" destination="TU4-BQ-eyD" id="hFn-bX-xDH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6L-1N-2Th" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="244.22788605697153"/>
         </scene>
     </scenes>
     <resources>
