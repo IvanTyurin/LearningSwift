@@ -1,4 +1,4 @@
-/// Copyright (c) 2019 Razeware LLC
+/// Copyright (c) 2018 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -26,23 +26,19 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-class Number {
-  var countryCode: String
-  var numberString: String
-  unowned var contact: Contact
+import UIKit
 
-  init?(countryCode: String, numberString: String, contact: Contact) {
-    guard countryCode != "" || numberString != "" else {
-      return nil
+final class PhotoCollectionViewCell: UICollectionViewCell {
+  @IBOutlet var imageView: UIImageView!
+  var representedAssetIdentifier: String!
+  var thumbnailImage: UIImage! {
+    didSet {
+      imageView.image = thumbnailImage
     }
-    self.countryCode = countryCode
-    self.numberString = numberString
-    self.contact = contact
   }
-}
-
-extension Number: CustomStringConvertible {
-  var description: String {
-    return [countryCode, numberString].joined(separator: " ")
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    imageView.image = nil
   }
 }
