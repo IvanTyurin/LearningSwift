@@ -51,8 +51,17 @@ final class PhotoDetailViewController: UIViewController {
       photoImageView.contentMode = .center
     }
     
-    let overlayImage = faceOverlayImageFrom(image)
-    fadeInNewImage(overlayImage)
+    DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+        guard let self = self else { return }
+        let overlayImage = self.faceOverlayImageFrom(self.image)
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.fadeInNewImage(overlayImage)
+        }
+    }
+    
+    
+    
   }
 
 }
