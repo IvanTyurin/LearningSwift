@@ -38,6 +38,8 @@ class ViewController: UIViewController {
     headerLabelCenterConstraint.constant -= view.bounds.width
     usernameTextFieldCenterConstraint.constant -= view.bounds.width
     passwordTextFieldCenterConstraint.constant -= view.bounds.width
+    
+    animatedClouds()
    }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +64,7 @@ class ViewController: UIViewController {
       [weak self] in self?.loginButton.backgroundColor = .systemYellow
     }, completion: nil)
     
-    animatedClouds()
+    
    }
 
    override func viewDidLoad() {
