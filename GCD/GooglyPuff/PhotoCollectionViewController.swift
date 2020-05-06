@@ -37,9 +37,24 @@ final class PhotoCollectionViewController: UICollectionViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     let backgroundImageView = UIImageView(image: UIImage(named:"background"))
     backgroundImageView.alpha = backgroundImageOpacity
+
+    #if DEBUG
+        var signal: DispatchSourceSignal?
+        let setupSignalHandlerFor = { (_ object: AnyObject) in
+            let queue = DispatchQueue.main
+            signal = DispatchSource.makeSignalSource(signal: SIGSTOP, queue: queue)
+
+            signal?.setEventHandler {
+                print("Hi, I am: \(object.description!)")
+            }
+
+            signal?.resume()
+        }
+    #endif
+
     backgroundImageView.contentMode = .center
     collectionView?.backgroundView = backgroundImageView
     
