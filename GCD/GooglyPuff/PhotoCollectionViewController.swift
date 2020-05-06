@@ -37,9 +37,24 @@ final class PhotoCollectionViewController: UICollectionViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     let backgroundImageView = UIImageView(image: UIImage(named:"background"))
     backgroundImageView.alpha = backgroundImageOpacity
+
+    #if DEBUG
+        var signal: DispatchSourceSignal?
+        let setupSignalHandlerFor = { (_ object: AnyObject) in
+            let queue = DispatchQueue.main
+            signal = DispatchSource.makeSignalSource(signal: SIGSTOP, queue: queue)
+
+            signal?.setEventHandler {
+                print("Hi, I am: \(object.description!)")
+            }
+
+            signal?.resume()
+        }
+    #endif
+
     backgroundImageView.contentMode = .center
     collectionView?.backgroundView = backgroundImageView
     
@@ -90,7 +105,18 @@ final class PhotoCollectionViewController: UICollectionViewController {
 // MARK: - Private Methods
 private extension PhotoCollectionViewController {
   func showOrHideNavPrompt() {
-    // Implement me!
+    let delaySeconds = 2.0
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + delaySeconds) { [weak self] in
+        guard let self = self else { return }
+        if PhotoManager.shared.photos.count > 0 {
+            self.navigationItem.prompt = nil
+        } else {
+            self.navigationItem.prompt = "Добавь фото с лицом для Гуглифая!"
+        }
+        
+        self.navigationController?.viewIfLoaded?.setNeedsLayout()
+    }
   }
   
   func downloadImageAssets() {
