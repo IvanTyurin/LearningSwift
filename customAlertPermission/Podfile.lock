@@ -1,0 +1,16 @@
+PODS:
+  - PMAlertController (4.0.0)
+
+DEPENDENCIES:
+  - PMAlertController
+
+SPEC REPOS:
+  trunk:
+    - PMAlertController
+
+SPEC CHECKSUMS:
+  PMAlertController: 5fad2da8b9eb687134ed50c3462fed12c3afe976
+
+PODFILE CHECKSUM: d6d195cbca4441692bed9cbd5b8677dfef9d8b3d
+
+COCOAPODS: 1.9.1
