@@ -9,5 +9,6 @@
 import UIKit
 
 class MosaicCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
     
 }
