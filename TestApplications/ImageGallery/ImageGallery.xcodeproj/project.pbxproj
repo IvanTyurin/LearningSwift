@@ -17,6 +17,8 @@
 		E38178B0246AFE39002F2D9A /* MosaicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38178AF246AFE39002F2D9A /* MosaicViewController.swift */; };
 		E38178B2246B1B1D002F2D9A /* PhotoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38178B1246B1B1D002F2D9A /* PhotoCollector.swift */; };
 		E38178B6246B1FA3002F2D9A /* MosaicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38178B5246B1FA3002F2D9A /* MosaicCollectionViewCell.swift */; };
+		E3D37C9F247D4E6400B2F0B8 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D37C9E247D4E6400B2F0B8 /* CarouselViewController.swift */; };
+		E3D37CA5247D5BA100B2F0B8 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D37CA4247D5BA100B2F0B8 /* CarouselCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E38178AF246AFE39002F2D9A /* MosaicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicViewController.swift; sourceTree = "<group>"; };
 		E38178B1246B1B1D002F2D9A /* PhotoCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollector.swift; sourceTree = "<group>"; };
 		E38178B5246B1FA3002F2D9A /* MosaicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3D37C9E247D4E6400B2F0B8 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		E3D37CA4247D5BA100B2F0B8 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 				E3817899246AF772002F2D9A /* TabBarController.swift */,
 				E38178AF246AFE39002F2D9A /* MosaicViewController.swift */,
 				E35E3F90246BDBA700369229 /* FullScreenImageViewController.swift */,
+				E3D37C9E247D4E6400B2F0B8 /* CarouselViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				E38178B5246B1FA3002F2D9A /* MosaicCollectionViewCell.swift */,
+				E3D37CA4247D5BA100B2F0B8 /* CarouselCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,10 +188,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D37CA5247D5BA100B2F0B8 /* CarouselCollectionViewCell.swift in Sources */,
 				E38178B6246B1FA3002F2D9A /* MosaicCollectionViewCell.swift in Sources */,
 				E38178B0246AFE39002F2D9A /* MosaicViewController.swift in Sources */,
 				E38178B2246B1B1D002F2D9A /* PhotoCollector.swift in Sources */,
 				E381789A246AF772002F2D9A /* TabBarController.swift in Sources */,
+				E3D37C9F247D4E6400B2F0B8 /* CarouselViewController.swift in Sources */,
 				E35E3F91246BDBA700369229 /* FullScreenImageViewController.swift in Sources */,
 				E3817896246AF772002F2D9A /* AppDelegate.swift in Sources */,
 				E3817898246AF772002F2D9A /* SceneDelegate.swift in Sources */,

@@ -10,17 +10,29 @@ import UIKit
 import CoreGraphics
 
 class FullScreenImageViewController: UIViewController {
-    var image = UIImage()
+    var photoIndex: Int?
     var panGestureAncor: CGPoint?
     var rotateBaseValue: CGFloat?
+
+    private let photoCollector = PhotoCollector.shared
 
     @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.gray
-        imageView.image = image
+
+
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        view.backgroundColor = UIColor.gray
+        if let index = photoIndex {
+            imageView.image = photoCollector.getImage(index: index)
+        }
+    }
+
     
     @IBAction func handlePan(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
@@ -59,18 +71,4 @@ class FullScreenImageViewController: UIViewController {
             recognizer.rotation = 0
         }
     }
-
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -12,25 +12,30 @@ import Photos
 
 class PhotoCollector {
     static let shared = PhotoCollector()
+    var arrayOfImagesPreview = [UIImage]()
 
-    private init() {}
+    private init() {
+        arrayOfImagesPreview = getAllImages()
+    }
 
     func getAllImages() -> [UIImage] {
         let manager = PHImageManager.default()
         let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions())
-        var arrayOfImages = [UIImage]()
+        var array = [UIImage]()
 
-        for i in 0...fetchResult.count - 1 {
-            manager.requestImage(for: fetchResult.object(at: i),
-                                 targetSize: CGSize(width: 100, height: 100),
-                                 contentMode: .aspectFit,
-                                 options: requestOptions()) { (image, _) in
-                                    if let image = image {
-                                        arrayOfImages.append(image)
-                                    }
+        if fetchResult.count > 0  {
+            for i in 0...fetchResult.count - 1 {
+                manager.requestImage(for: fetchResult.object(at: i),
+                                     targetSize: CGSize(width: 100, height: 100),
+                                     contentMode: .aspectFit,
+                                     options: requestOptions()) { (image, _) in
+                                        if let image = image {
+                                            array.append(image)
+                                        }
+                }
             }
         }
-        return arrayOfImages
+        return array
     }
 
     func getImage(index: Int) -> UIImage {
