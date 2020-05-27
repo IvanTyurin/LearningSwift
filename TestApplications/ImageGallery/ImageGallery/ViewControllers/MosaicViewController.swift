@@ -8,42 +8,34 @@
 
 import UIKit
 
-class MosaicViewController: UICollectionViewController  {
+class MosaicViewController: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
+
     private let photoCollector = PhotoCollector.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         photoCollector.photoAutorization()
-        
-        view.backgroundColor = UIColor.blue
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
 }
 
-extension MosaicViewController {
+extension MosaicViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photoCollector.arrayOfImagesPreview.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "mosaicCell", for: indexPath) as? MosaicCollectionViewCell
         else { return UICollectionViewCell() }
-        imageCell.backgroundColor = UIColor.black
         imageCell.imageView.image = photoCollector.arrayOfImagesPreview[indexPath.row]
         return imageCell
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let height = view.frame.size.height
-        let width = view.frame.size.width
-        return CGSize(width: width * 0.5, height: height * 0.5)
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "FullScreenImageVC") as? FullScreenImageViewController else { return }
 

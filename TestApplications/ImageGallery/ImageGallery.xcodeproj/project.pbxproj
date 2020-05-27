@@ -72,7 +72,7 @@
 				E3817897246AF772002F2D9A /* SceneDelegate.swift */,
 				E38178B3246B1B23002F2D9A /* Model */,
 				E38178AA246AF794002F2D9A /* ViewControllers */,
-				E38178B4246B1F5F002F2D9A /* Views */,
+				E38178B4246B1F5F002F2D9A /* Cells */,
 				E38178A9246AF77D002F2D9A /* Storyboards */,
 				E381789E246AF775002F2D9A /* Assets.xcassets */,
 				E38178A3246AF775002F2D9A /* Info.plist */,
@@ -108,13 +108,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E38178B4246B1F5F002F2D9A /* Views */ = {
+		E38178B4246B1F5F002F2D9A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				E38178B5246B1FA3002F2D9A /* MosaicCollectionViewCell.swift */,
 				E3D37CA4247D5BA100B2F0B8 /* CarouselCollectionViewCell.swift */,
 			);
-			path = Views;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

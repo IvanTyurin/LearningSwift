@@ -26,7 +26,7 @@ class PhotoCollector {
         if fetchResult.count > 0  {
             for i in 0...fetchResult.count - 1 {
                 manager.requestImage(for: fetchResult.object(at: i),
-                                     targetSize: CGSize(width: 100, height: 100),
+                                     targetSize: CGSize(width: 400, height: 400),
                                      contentMode: .aspectFit,
                                      options: requestOptions()) { (image, _) in
                                         if let image = image {
