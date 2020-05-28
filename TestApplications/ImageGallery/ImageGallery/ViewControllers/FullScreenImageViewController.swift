@@ -21,19 +21,11 @@ class FullScreenImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-
-        view.backgroundColor = UIColor.gray
         if let index = photoIndex {
             imageView.image = photoCollector.getImage(index: index)
         }
     }
 
-    
     @IBAction func handlePan(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began:
@@ -52,7 +44,7 @@ class FullScreenImageViewController: UIViewController {
         default:
             break
         }
-}
+    }
 
     @IBAction func handlePinch(_ recognizer: UIPinchGestureRecognizer) {
         guard let recognizerView = recognizer.view else { return }
@@ -69,6 +61,27 @@ class FullScreenImageViewController: UIViewController {
         if let gestureView = recognizer.view {
             gestureView.transform = gestureView.transform.rotated(by: recognizer.rotation)
             recognizer.rotation = 0
+        }
+    }
+
+    @IBAction func swipeRecognizer(_ recognizer: UISwipeGestureRecognizer) {
+        let cells = photoCollector.arrayOfImagesPreview.count - 1
+
+        switch recognizer.direction {
+        case .right:
+            if var index = photoIndex, index > 0 {
+                index -= 1
+                photoIndex = index
+                imageView.image = photoCollector.getImage(index: index)
+            }
+        case .left:
+            if var index = photoIndex, index < cells {
+                index += 1
+                photoIndex = index
+                imageView.image = photoCollector.getImage(index: index)
+            }
+        default:
+            break
         }
     }
 }

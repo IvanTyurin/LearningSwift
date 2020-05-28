@@ -60,11 +60,17 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uc1-Mi-OVv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="zLw-Da-cak"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="eTj-Vr-dhN"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vo7-fO-leh" appends="YES" id="hlD-ZP-uib"/>
+                                    <outletCollection property="gestureRecognizers" destination="bDs-bF-9Qj" appends="YES" id="7Bh-OF-mnk"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -83,6 +89,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jG-Ba-SXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="vo7-fO-leh">
+                    <connections>
+                        <action selector="swipeRecognizer:" destination="mwm-BB-44r" id="pbf-iz-doQ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="bDs-bF-9Qj">
+                    <connections>
+                        <action selector="swipeRecognizer:" destination="mwm-BB-44r" id="ZFH-B5-zRX"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="508.69565217391306" y="172.76785714285714"/>
         </scene>
@@ -96,15 +112,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GWO-3y-98V" kind="relationship" relationship="viewControllers" id="ob2-IO-AyN"/>
                         <segue destination="mwm-BB-44r" kind="relationship" relationship="viewControllers" id="z0t-Cx-Xqx"/>
+                        <segue destination="Z7D-ZI-bko" kind="relationship" relationship="viewControllers" id="6hS-rv-nSq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggm-P2-Tvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-406" y="-116"/>
+            <point key="canvasLocation" x="-354" y="-190"/>
         </scene>
-        <!--Mosaic View Controller-->
+        <!--Images-->
         <scene sceneID="dcy-ca-oYt">
             <objects>
                 <viewController id="GWO-3y-98V" customClass="MosaicViewController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
@@ -113,9 +129,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2of-Ag-aHk">
-                                <rect key="frame" x="0.0" y="44" width="414" height="669"/>
+                                <rect key="frame" x="5" y="93" width="404" height="620"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a8B-eB-ATL">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="a8B-eB-ATL">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -152,21 +168,40 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2of-Ag-aHk" firstAttribute="leading" secondItem="zOV-4U-Bkv" secondAttribute="leading" id="0bH-pC-XKU"/>
-                            <constraint firstItem="zOV-4U-Bkv" firstAttribute="trailing" secondItem="2of-Ag-aHk" secondAttribute="trailing" id="W5t-9V-Jfw"/>
+                            <constraint firstItem="2of-Ag-aHk" firstAttribute="leading" secondItem="zOV-4U-Bkv" secondAttribute="leading" constant="5" id="0bH-pC-XKU"/>
+                            <constraint firstItem="zOV-4U-Bkv" firstAttribute="trailing" secondItem="2of-Ag-aHk" secondAttribute="trailing" constant="5" id="W5t-9V-Jfw"/>
                             <constraint firstItem="zOV-4U-Bkv" firstAttribute="bottom" secondItem="2of-Ag-aHk" secondAttribute="bottom" constant="100" id="slZ-ac-GFB"/>
-                            <constraint firstItem="2of-Ag-aHk" firstAttribute="top" secondItem="zOV-4U-Bkv" secondAttribute="top" id="vEL-PZ-P1a"/>
+                            <constraint firstItem="2of-Ag-aHk" firstAttribute="top" secondItem="zOV-4U-Bkv" secondAttribute="top" constant="5" id="vEL-PZ-P1a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zOV-4U-Bkv"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="square.grid.2x2" catalog="system" id="qGF-Vf-t41"/>
+                    <navigationItem key="navigationItem" title="Images" id="trs-3B-q7k"/>
                     <connections>
                         <outlet property="collectionView" destination="2of-Ag-aHk" id="sjN-FG-QUt"/>
+                        <segue destination="WGf-0F-EhI" kind="show" id="vrv-qp-JP6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wK-BG-f4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468" y="-580"/>
+            <point key="canvasLocation" x="1281" y="-514"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DPM-If-0Jg">
+            <objects>
+                <navigationController id="Z7D-ZI-bko" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="square.grid.2x2" catalog="system" id="4es-mk-bIt"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VsC-6c-VaA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GWO-3y-98V" kind="relationship" relationship="rootViewController" id="OZ7-Lj-d8E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ll-EA-BfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="-513"/>
         </scene>
         <!--Full Screen Image View Controller-->
         <scene sceneID="4ut-2K-1bU">
@@ -177,12 +212,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lbf-x8-Al6">
-                                <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="VVV-d6-iWo" appends="YES" id="9mQ-du-XNy"/>
                                     <outletCollection property="gestureRecognizers" destination="8xL-LN-jCy" appends="YES" id="CPP-I5-eqN"/>
                                     <outletCollection property="gestureRecognizers" destination="WvD-uZ-TCF" appends="YES" id="fQU-yj-epA"/>
+                                    <outletCollection property="gestureRecognizers" destination="c0o-rE-Tae" appends="YES" id="Cdh-8E-ilZ"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -194,18 +229,33 @@
                             <constraint firstItem="lbf-x8-Al6" firstAttribute="leading" secondItem="leV-Me-H1h" secondAttribute="leading" id="g9K-kM-Nmv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="leV-Me-H1h"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eNt-pM-d7M" appends="YES" id="4aY-FG-0XH"/>
+                            <outletCollection property="gestureRecognizers" destination="G8J-kI-545" appends="YES" id="ccf-et-bFw"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="bEW-BG-dn4">
                         <barButtonItem key="backBarButtonItem" title="Back" style="plain" id="Gss-kx-GVn"/>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="lbf-x8-Al6" id="w0Z-4D-wN8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfA-Vq-NBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="VVV-d6-iWo">
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="left" id="eNt-pM-d7M">
                     <connections>
-                        <action selector="handlePan:" destination="WGf-0F-EhI" id="rCK-vL-k9T"/>
+                        <action selector="swipeRecognizer:" destination="WGf-0F-EhI" id="hm8-Rd-Vhk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="G8J-kI-545">
+                    <connections>
+                        <action selector="swipeRecognizer:" destination="WGf-0F-EhI" id="gxH-KC-vmx"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="2" maximumNumberOfTouches="3" id="c0o-rE-Tae">
+                    <connections>
+                        <action selector="handlePan:" destination="WGf-0F-EhI" id="0k6-j1-rui"/>
                     </connections>
                 </panGestureRecognizer>
                 <pinchGestureRecognizer id="8xL-LN-jCy">
@@ -219,7 +269,7 @@
                     </connections>
                 </rotationGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1514.4927536231885" y="-509.59821428571428"/>
+            <point key="canvasLocation" x="2029" y="-514"/>
         </scene>
     </scenes>
     <resources>

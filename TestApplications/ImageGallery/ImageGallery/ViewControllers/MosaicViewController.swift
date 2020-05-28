@@ -40,6 +40,15 @@ extension MosaicViewController: UICollectionViewDataSource, UICollectionViewDele
         guard let vc = storyboard.instantiateViewController(withIdentifier: "FullScreenImageVC") as? FullScreenImageViewController else { return }
 
         vc.photoIndex = indexPath.row
-        self.present(vc, animated: true, completion: nil)
+        self.show(vc, sender: self)
+    }
+}
+
+extension MosaicViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let widthPerItem = view.frame.width / 3 - ((collectionViewLayout as? UICollectionViewFlowLayout)?.minimumInteritemSpacing ?? 0.0) - 2.5
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
 }
