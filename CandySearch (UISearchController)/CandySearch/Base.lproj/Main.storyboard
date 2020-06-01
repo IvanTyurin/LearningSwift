@@ -82,25 +82,6 @@
             </objects>
             <point key="canvasLocation" x="1023" y="-630"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="E93-50-UW7">
-            <objects>
-                <viewController id="NjC-55-VYB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gUH-WR-L64"/>
-                        <viewControllerLayoutGuide type="bottom" id="J1M-m6-sXu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RQi-eT-MJG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="dOO-bn-xrk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8w9-Oq-IA8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1075" y="108"/>
-        </scene>
         <!--Master-->
         <scene sceneID="CWj-zI-HWz">
             <objects>
