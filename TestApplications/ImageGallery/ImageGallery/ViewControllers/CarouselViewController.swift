@@ -34,6 +34,9 @@ class CarouselViewController: UIViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
 
+        smallCollectionView.showsHorizontalScrollIndicator = false
+        smallCollectionView.showsVerticalScrollIndicator = false
+
         bigImageView.image = photoCollector.getImage(index: cellNumber)
         recenterImage()
     }
