@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SenderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sender Application" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEo-CU-hAq">
+                                <rect key="frame" x="85" y="64" width="244.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are we looking for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obZ-2l-Hlz">
+                                <rect key="frame" x="112.5" y="200" width="189.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search string" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgE-Tx-Sag">
+                                <rect key="frame" x="30" y="231" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-Zw-Btr">
+                                <rect key="frame" x="107" y="295" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i0G-AA-VSh"/>
+                                    <constraint firstAttribute="width" constant="200" id="rrA-Ku-ZSK"/>
+                                </constraints>
+                                <state key="normal" title="Open Apple Maps"/>
+                                <connections>
+                                    <action selector="mapsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pdh-0Z-MYL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjN-AQ-Hv0">
+                                <rect key="frame" x="107" y="375" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0KN-cU-ezJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="jBq-MG-FnQ"/>
+                                </constraints>
+                                <state key="normal" title="Open YouTube"/>
+                                <connections>
+                                    <action selector="youtubeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WCQ-r1-Wd4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffb-x5-AqJ">
+                                <rect key="frame" x="107" y="455" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bYH-f8-ufV"/>
+                                    <constraint firstAttribute="width" constant="200" id="f3C-58-pHU"/>
+                                </constraints>
+                                <state key="normal" title="Open Receiver App"/>
+                                <connections>
+                                    <action selector="receiverButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhj-xd-64z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ffb-x5-AqJ" firstAttribute="centerX" secondItem="GEo-CU-hAq" secondAttribute="centerX" id="3kV-eF-ChA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bgE-Tx-Sag" secondAttribute="trailing" constant="30" id="4Ja-0r-Gf4"/>
+                            <constraint firstItem="bgE-Tx-Sag" firstAttribute="top" secondItem="obZ-2l-Hlz" secondAttribute="bottom" constant="10" id="Gs0-4A-Fk7"/>
+                            <constraint firstItem="Ffb-x5-AqJ" firstAttribute="top" secondItem="rjN-AQ-Hv0" secondAttribute="bottom" constant="30" id="NAn-4X-9sV"/>
+                            <constraint firstItem="obZ-2l-Hlz" firstAttribute="top" secondItem="GEo-CU-hAq" secondAttribute="bottom" constant="100" id="SFk-Pb-MXp"/>
+                            <constraint firstItem="1jj-Zw-Btr" firstAttribute="centerX" secondItem="GEo-CU-hAq" secondAttribute="centerX" id="T9Q-TH-ka9"/>
+                            <constraint firstItem="GEo-CU-hAq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WIw-dK-7rz"/>
+                            <constraint firstItem="rjN-AQ-Hv0" firstAttribute="top" secondItem="1jj-Zw-Btr" secondAttribute="bottom" constant="30" id="ZiU-xe-Q91"/>
+                            <constraint firstItem="bgE-Tx-Sag" firstAttribute="centerX" secondItem="GEo-CU-hAq" secondAttribute="centerX" id="mk1-Xe-glm"/>
+                            <constraint firstItem="obZ-2l-Hlz" firstAttribute="centerX" secondItem="GEo-CU-hAq" secondAttribute="centerX" id="ncj-ad-XMi"/>
+                            <constraint firstItem="GEo-CU-hAq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="qby-di-QHr"/>
+                            <constraint firstItem="rjN-AQ-Hv0" firstAttribute="centerX" secondItem="GEo-CU-hAq" secondAttribute="centerX" id="sKP-C5-HWa"/>
+                            <constraint firstItem="bgE-Tx-Sag" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="vIh-ST-hJJ"/>
+                            <constraint firstItem="1jj-Zw-Btr" firstAttribute="top" secondItem="bgE-Tx-Sag" secondAttribute="bottom" constant="30" id="vkQ-Ht-vjK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapsButton" destination="1jj-Zw-Btr" id="Jo2-dL-KgL"/>
+                        <outlet property="receiverButton" destination="Ffb-x5-AqJ" id="Qsb-Gt-3dn"/>
+                        <outlet property="searchTextField" destination="bgE-Tx-Sag" id="XhC-tg-MUN"/>
+                        <outlet property="youtubeButton" destination="rjN-AQ-Hv0" id="L28-F5-Kfb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="139"/>
+        </scene>
+    </scenes>
+</document>
