@@ -8,6 +8,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Slider View Controller-->
+        <scene sceneID="Ajl-6i-2VW">
+            <objects>
+                <viewController id="BRF-P6-JHV" customClass="SliderViewController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z7L-HP-y8h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NvH-QY-Yef">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="sjK-95-zBq">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sliderCell" id="SeD-EO-HA0" customClass="SliderCollectionViewCell" customModule="ImageGallery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6ba-7U-wJU">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-XG-yU6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TtB-XG-yU6" firstAttribute="leading" secondItem="6ba-7U-wJU" secondAttribute="leading" id="5IE-fT-zMh"/>
+                                                <constraint firstItem="TtB-XG-yU6" firstAttribute="top" secondItem="6ba-7U-wJU" secondAttribute="top" id="Efq-sy-rGc"/>
+                                                <constraint firstAttribute="bottom" secondItem="TtB-XG-yU6" secondAttribute="bottom" id="m7J-zl-r1o"/>
+                                                <constraint firstAttribute="trailing" secondItem="TtB-XG-yU6" secondAttribute="trailing" id="ufF-HP-AL6"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="TtB-XG-yU6" id="Dom-KC-27B"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0Vf-5l-ens" firstAttribute="trailing" secondItem="NvH-QY-Yef" secondAttribute="trailing" id="YHF-AQ-SyP"/>
+                            <constraint firstItem="0Vf-5l-ens" firstAttribute="bottom" secondItem="NvH-QY-Yef" secondAttribute="bottom" id="a1M-nL-xaW"/>
+                            <constraint firstItem="NvH-QY-Yef" firstAttribute="top" secondItem="0Vf-5l-ens" secondAttribute="top" id="e3t-KG-kpM"/>
+                            <constraint firstItem="NvH-QY-Yef" firstAttribute="leading" secondItem="0Vf-5l-ens" secondAttribute="leading" id="rK0-40-MYl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Vf-5l-ens"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="square.split.2x1" catalog="system" id="G4M-sr-ab7"/>
+                    <connections>
+                        <outlet property="collectionView" destination="NvH-QY-Yef" id="1ZJ-OA-ldV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5Y-h3-PqV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-379.71014492753625" y="620.75892857142856"/>
+        </scene>
         <!--Carousel View Controller-->
         <scene sceneID="1cM-Kb-XQU">
             <objects>
@@ -17,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IVG-Dc-MR1">
-                                <rect key="frame" x="5" y="722" width="404" height="86"/>
+                                <rect key="frame" x="5" y="771" width="404" height="86"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="szm-aO-5VK"/>
@@ -112,8 +173,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="mwm-BB-44r" kind="relationship" relationship="viewControllers" id="z0t-Cx-Xqx"/>
                         <segue destination="Z7D-ZI-bko" kind="relationship" relationship="viewControllers" id="6hS-rv-nSq"/>
+                        <segue destination="BRF-P6-JHV" kind="relationship" relationship="viewControllers" id="6LR-CP-pv0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggm-P2-Tvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -129,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2of-Ag-aHk">
-                                <rect key="frame" x="5" y="93" width="404" height="620"/>
+                                <rect key="frame" x="5" y="93" width="404" height="720"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="a8B-eB-ATL">
                                     <size key="itemSize" width="128" height="128"/>
@@ -170,7 +231,7 @@
                         <constraints>
                             <constraint firstItem="2of-Ag-aHk" firstAttribute="leading" secondItem="zOV-4U-Bkv" secondAttribute="leading" constant="5" id="0bH-pC-XKU"/>
                             <constraint firstItem="zOV-4U-Bkv" firstAttribute="trailing" secondItem="2of-Ag-aHk" secondAttribute="trailing" constant="5" id="W5t-9V-Jfw"/>
-                            <constraint firstItem="zOV-4U-Bkv" firstAttribute="bottom" secondItem="2of-Ag-aHk" secondAttribute="bottom" constant="100" id="slZ-ac-GFB"/>
+                            <constraint firstItem="zOV-4U-Bkv" firstAttribute="bottom" secondItem="2of-Ag-aHk" secondAttribute="bottom" id="slZ-ac-GFB"/>
                             <constraint firstItem="2of-Ag-aHk" firstAttribute="top" secondItem="zOV-4U-Bkv" secondAttribute="top" constant="5" id="vEL-PZ-P1a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zOV-4U-Bkv"/>
@@ -274,6 +335,7 @@
     </scenes>
     <resources>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <image name="square.split.2x1" catalog="system" width="128" height="114"/>
         <image name="squares.below.rectangle" catalog="system" width="128" height="92"/>
     </resources>
 </document>
