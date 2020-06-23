@@ -11,6 +11,7 @@
 		E3B60F0924A12C50005DFE37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60F0824A12C50005DFE37 /* AppDelegate.swift */; };
 		E3B60F0A24A12C81005DFE37 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60F0024A12B0D005DFE37 /* ListViewController.swift */; };
 		E3B60F0B24A12C81005DFE37 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60EFF24A12B0D005DFE37 /* NewTaskViewController.swift */; };
+		E3B60F0C24A12C81005DFE37 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60F0124A12B0D005DFE37 /* SplitViewController.swift */; };
 		E3B60F0D24A12C81005DFE37 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60F0224A12B0D005DFE37 /* ListViewCell.swift */; };
 		E3B60F0E24A12CFE005DFE37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B60F0624A12B11005DFE37 /* Main.storyboard */; };
 		E3B60F0F24A12D01005DFE37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B60F0424A12B11005DFE37 /* LaunchScreen.storyboard */; };
@@ -27,6 +28,7 @@
 		E3B60EFC24A12B0A005DFE37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E3B60EFF24A12B0D005DFE37 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		E3B60F0024A12B0D005DFE37 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		E3B60F0124A12B0D005DFE37 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		E3B60F0224A12B0D005DFE37 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 		E3B60F0524A12B11005DFE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B60F0724A12B11005DFE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,8 +93,9 @@
 			children = (
 				E3B60F0024A12B0D005DFE37 /* ListViewController.swift */,
 				E3B60EFF24A12B0D005DFE37 /* NewTaskViewController.swift */,
-				E3D7640524A27642001B9177 /* DetailViewController.swift */,
+				E3B60F0124A12B0D005DFE37 /* SplitViewController.swift */,
 				E3B60F0224A12B0D005DFE37 /* ListViewCell.swift */,
+				E3D7640524A27642001B9177 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				E3D7640624A27642001B9177 /* DetailViewController.swift in Sources */,
 				E3D763E324A13893001B9177 /* DataModel.swift in Sources */,
+				E3B60F0C24A12C81005DFE37 /* SplitViewController.swift in Sources */,
 				E3B60F0924A12C50005DFE37 /* AppDelegate.swift in Sources */,
 				E3B60EFD24A12B0B005DFE37 /* SceneDelegate.swift in Sources */,
 				E3B60F0B24A12C81005DFE37 /* NewTaskViewController.swift in Sources */,
@@ -328,7 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ivantyurin.ToDoIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -346,7 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ivantyurin.ToDoIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

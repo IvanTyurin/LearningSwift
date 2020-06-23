@@ -12,8 +12,13 @@ class SplitViewController: UISplitViewController, UISplitViewControllerDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
-        self.preferredDisplayMode = .allVisible
+        //self.preferredDisplayMode = .allVisible
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        delegate = self
+        preferredDisplayMode = .allVisible
     }
 
     func splitViewController(

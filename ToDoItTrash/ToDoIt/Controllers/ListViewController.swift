@@ -25,7 +25,6 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addButton.tintColor = .darkGray
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -82,12 +81,13 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let task = tasksArray[indexPath.row]
-
-        guard let detailVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailVC") as? DetailViewController else { return }
-        taskDelegate = detailVC
         taskDelegate?.selectedTask(task)
-        navigationController?.pushViewController(detailVC, animated: true)
 
+        if
+            let detailVC = taskDelegate as? DetailViewController,
+            let detailNavigationController = detailVC.navigationController {
+                splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
+        }
     }
 
     @objc private func checkBoxBtnPressed(sender: UIButton) {
@@ -110,11 +110,4 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             box?.tintColor = .systemGray3
         }
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowDetailSegue" {
-//            guard let destination = segue.destination as? DetailViewController else { return }
-//            destination.recievedTask
-//        }
-//    }
 }
