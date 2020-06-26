@@ -25,7 +25,9 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addButton.tintColor = .darkGray
-
+        if !dataManager.checkFirebaseAuth() {
+            showAuthAlert()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +36,21 @@ class ListViewController: UIViewController {
 
         tasksArray = dataManager.getArray()
         tableView.reloadData()
+    }
+
+    private func showAuthAlert() {
+        let alert = UIAlertController(title: "Create Account", message: "Please login or register", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                    if let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "AuthViewController") as? AuthViewController {
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                })
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelButton)
+        alert.addAction(okButton)
+
+        self.present(alert, animated: true, completion: nil)
+        print("Alert Presented!")
     }
 }
 

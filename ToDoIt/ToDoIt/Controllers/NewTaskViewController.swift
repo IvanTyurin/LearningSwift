@@ -28,11 +28,15 @@ class NewTaskViewController: UIViewController {
     }
 
     @IBAction func addBtnPressed(_ sender: UIButton) {
+        let dbStateKey = "dbState"
+        let defaults = UserDefaults.standard
         guard let titleText = titleField.text else { return }
         guard let descriptionText = descriptionField.text else { return }
         guard let placeText = placeField.text else { return }
         let deadLine = datePicker.date
+
         dataManager.addTask(title: titleText, text: descriptionText, place: placeText, deadLine: deadLine)
+        defaults.set(true, forKey: dbStateKey)
         dismiss(animated: true, completion: nil)
     }
 }
