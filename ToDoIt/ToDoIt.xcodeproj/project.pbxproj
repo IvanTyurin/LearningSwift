@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E300DC7724A689B800C63696 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = E300DC7624A689B800C63696 /* Models */; };
 		E3B60EFD24A12B0B005DFE37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60EFC24A12B0A005DFE37 /* SceneDelegate.swift */; };
 		E3B60F0924A12C50005DFE37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60F0824A12C50005DFE37 /* AppDelegate.swift */; };
 		E3B60F0A24A12C81005DFE37 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60F0024A12B0D005DFE37 /* ListViewController.swift */; };
@@ -14,7 +15,6 @@
 		E3B60F0D24A12C81005DFE37 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B60F0224A12B0D005DFE37 /* ListViewCell.swift */; };
 		E3B60F0E24A12CFE005DFE37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B60F0624A12B11005DFE37 /* Main.storyboard */; };
 		E3B60F0F24A12D01005DFE37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3B60F0424A12B11005DFE37 /* LaunchScreen.storyboard */; };
-		E3D763E324A13893001B9177 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D763E224A13893001B9177 /* DataModel.swift */; };
 		E3D763E424A15B55001B9177 /* ToDoIt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3B60EF824A12B03005DFE37 /* ToDoIt.xcdatamodeld */; };
 		E3D7640624A27642001B9177 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7640524A27642001B9177 /* DetailViewController.swift */; };
 		E49C8B5D0CF03391D766F3A1 /* Pods_ToDoIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C3B676BD8F21B8F01EABBF4 /* Pods_ToDoIt.framework */; };
@@ -23,6 +23,7 @@
 /* Begin PBXFileReference section */
 		0C3B676BD8F21B8F01EABBF4 /* Pods_ToDoIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		236C92C87D36D69465E75B68 /* Pods-ToDoIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoIt.debug.xcconfig"; path = "Target Support Files/Pods-ToDoIt/Pods-ToDoIt.debug.xcconfig"; sourceTree = "<group>"; };
+		E300DC7624A689B800C63696 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 		E3B60ECC24A0B311005DFE37 /* ToDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B60EF924A12B03005DFE37 /* ToDoIt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoIt.xcdatamodel; sourceTree = "<group>"; };
 		E3B60EFA24A12B03005DFE37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,12 +31,11 @@
 		E3B60EFC24A12B0A005DFE37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E3B60EFF24A12B0D005DFE37 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		E3B60F0024A12B0D005DFE37 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		E3B60F0224A12B0D005DFE37 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		E3B60F0224A12B0D005DFE37 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListViewCell.swift; path = ../../../TestApplications/ToDoIt/ToDoIt/Controller/ListViewCell.swift; sourceTree = "<group>"; };
 		E3B60F0524A12B11005DFE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3B60F0724A12B11005DFE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3B60F0824A12C50005DFE37 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ToDoIt/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		E3D763E224A13893001B9177 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		E3D7640524A27642001B9177 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E3D7640524A27642001B9177 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../../../TestApplications/ToDoIt/ToDoIt/Controller/DetailViewController.swift; sourceTree = "<group>"; };
 		E5B39AA715E369CD3D523ED7 /* Pods-ToDoIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoIt.release.xcconfig"; path = "Target Support Files/Pods-ToDoIt/Pods-ToDoIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +65,6 @@
 				236C92C87D36D69465E75B68 /* Pods-ToDoIt.debug.xcconfig */,
 				E5B39AA715E369CD3D523ED7 /* Pods-ToDoIt.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,13 +90,13 @@
 			isa = PBXGroup;
 			children = (
 				E3B60F0824A12C50005DFE37 /* AppDelegate.swift */,
+				E300DC7624A689B800C63696 /* Models */,
 				E3B60F1024A12D2D005DFE37 /* Boards */,
 				E3B60F1124A12D72005DFE37 /* Controllers */,
 				E3B60EF824A12B03005DFE37 /* ToDoIt.xcdatamodeld */,
 				E3B60EFA24A12B03005DFE37 /* Assets.xcassets */,
 				E3B60EFC24A12B0A005DFE37 /* SceneDelegate.swift */,
 				E3B60EFB24A12B08005DFE37 /* Info.plist */,
-				E3D763E224A13893001B9177 /* DataModel.swift */,
 			);
 			path = ToDoIt;
 			sourceTree = "<group>";
@@ -181,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E300DC7724A689B800C63696 /* Models in Resources */,
 				E3B60F0E24A12CFE005DFE37 /* Main.storyboard in Resources */,
 				E3B60F0F24A12D01005DFE37 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -219,7 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D7640624A27642001B9177 /* DetailViewController.swift in Sources */,
-				E3D763E324A13893001B9177 /* DataModel.swift in Sources */,
 				E3B60F0924A12C50005DFE37 /* AppDelegate.swift in Sources */,
 				E3B60EFD24A12B0B005DFE37 /* SceneDelegate.swift in Sources */,
 				E3B60F0B24A12C81005DFE37 /* NewTaskViewController.swift in Sources */,
@@ -373,6 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25J9GRY823;
 				INFOPLIST_FILE = ToDoIt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25J9GRY823;
 				INFOPLIST_FILE = ToDoIt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

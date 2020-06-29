@@ -47,9 +47,8 @@ class AuthViewController: UIViewController {
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text
-        else {
-            return
-        }
+        else { return }
+
         if email != "" && password != ""{
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] (authResult, error) in
                 guard let strongSelf = self else { return }
@@ -73,7 +72,34 @@ class AuthViewController: UIViewController {
     }
 
     private func signup() {
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text
+        else { return }
 
+        if email != "" && password != ""{
+            Auth.auth().createUser(withEmail: email, password: password) { [weak self] (authResult, error) in
+                guard let strongSelf = self else { return }
+                if error != nil {
+                    strongSelf.warningLabel.text = "Registration error!"
+                    strongSelf.warningLabel.isHidden = false
+                }
+                if let _ = authResult?.user {
+                    strongSelf.navigationController?.popViewController(animated: true)
+                }
+            }
+        } else {
+            if email == "" {
+                warningLabel.text = "E-mail field is empty!"
+            }
+            if password == "" {
+                warningLabel.text = "Password field is empty!"
+            }
+            if email == "" && password == "" {
+                warningLabel.text = "E-mail and Password fields are empty!"
+            }
+            warningLabel.isHidden = false
+        }
     }
 
     @IBAction func segmentChange(_ sender: UISegmentedControl) {
@@ -86,6 +112,7 @@ class AuthViewController: UIViewController {
 
     @IBAction func okBtnPressed(_ sender: UIButton) {
         let segmentState = segmentedControl.selectedSegmentIndex
+        print(segmentState)
         if segmentState == 0 {
             login()
         } else if segmentState == 1 {
