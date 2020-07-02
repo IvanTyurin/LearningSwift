@@ -18,40 +18,75 @@ class PhotoCollector {
     }
 
     func getAllImages() -> [UIImage] {
-        let manager = PHImageManager.default()
-        let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions())
-        var array = [UIImage]()
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized:
+            let manager = PHImageManager.default()
+            let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions())
+            var array = [UIImage]()
 
-        if fetchResult.count > 0  {
-            for i in 0...fetchResult.count - 1 {
-                manager.requestImage(for: fetchResult.object(at: i),
-                                     targetSize: CGSize(width: 400, height: 400),
-                                     contentMode: .aspectFit,
-                                     options: requestOptions()) { (image, _) in
-                                        if let image = image {
-                                            array.append(image)
-                                        }
+            if fetchResult.count > 0  {
+                for i in 0...fetchResult.count - 1 {
+                    manager.requestImage(for: fetchResult.object(at: i),
+                                         targetSize: CGSize(width: 400, height: 400),
+                                         contentMode: .aspectFit,
+                                         options: requestOptions()) { (image, _) in
+                                            if let image = image {
+                                                array.append(image)
+                                            }
+                    }
                 }
             }
+            return array
+        default:
+            return []
         }
-        return array
     }
 
     func getImage(index: Int) -> UIImage {
-        let manager = PHImageManager.default()
-        let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions())
-        var image = UIImage()
-        let width = fetchResult.object(at: index).pixelWidth
-        let height = fetchResult.object(at: index).pixelHeight
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized:
+            let manager = PHImageManager.default()
+            let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions())
+            var image = UIImage()
+            let width = fetchResult.object(at: index).pixelWidth
+            let height = fetchResult.object(at: index).pixelHeight
 
-        manager.requestImage(for: fetchResult.object(at: index),
-                             targetSize: CGSize(width: width, height: height),
-                             contentMode: .aspectFill,
-                             options: requestOptions()) { (img, _) in
-                                guard let img = img else { return }
-                                image = img
+            manager.requestImage(for: fetchResult.object(at: index),
+                                 targetSize: CGSize(width: width, height: height),
+                                 contentMode: .aspectFill,
+                                 options: requestOptions()) { (img, _) in
+                                    guard let img = img else { return }
+                                    image = img
+            }
+            return image
+        default:
+            return UIImage()
         }
-        return image
+    }
+
+    func getHalfQualityImage(index: Int) -> UIImage {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .authorized:
+            let manager = PHImageManager.default()
+            let fetchResult: PHFetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions())
+            var image = UIImage()
+            let width = fetchResult.object(at: index).pixelWidth
+            let height = fetchResult.object(at: index).pixelHeight
+
+            manager.requestImage(for: fetchResult.object(at: index),
+                                 targetSize: CGSize(width: width / 2, height: height / 2),
+                                 contentMode: .aspectFill,
+                                 options: requestOptions()) { (img, _) in
+                                    guard let img = img else { return }
+                                    image = img
+            }
+            return image
+        default:
+            return UIImage()
+        }
     }
 
     private func fetchOptions() -> PHFetchOptions {
