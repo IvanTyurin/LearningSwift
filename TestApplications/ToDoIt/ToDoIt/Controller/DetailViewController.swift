@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var deadlineLabel: UILabel!
 
-    var recievedTask: [String : Any?] = [:]
+    var recievedTask: TaskStruct?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +27,10 @@ class DetailViewController: UIViewController {
 
     private func fillText() {
         guard
-            let title = recievedTask["title"] as? String,
-            let text = recievedTask["text"] as? String,
-            let place = recievedTask["place"] as? String,
-            let deadLine = recievedTask["deadLine"] as? Date
+            let title = recievedTask?.title,
+            let text = recievedTask?.text,
+            let place = recievedTask?.place,
+            let deadLine = recievedTask?.deadLine
         else { return }
 
         let formatter = DateFormatter()
@@ -52,7 +52,7 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: TaskDetailViewDelegate {
-    func selectedTask(_ task: [String : Any?]) {
+    func selectedTask(_ task: TaskStruct) {
         recievedTask = task
     }
 }

@@ -14,7 +14,6 @@ class DataModel {
     private let appDelegate: AppDelegate
     private let context: NSManagedObjectContext
     private var tasks: [NSManagedObject] = []
-    var dataChanged = false
 
     static var shared = DataModel()
 
@@ -35,23 +34,27 @@ class DataModel {
         print(tasks)
     }
 
-    func getArray() -> ([[String: Any?]]) {
-        var array: [[String: Any?]] = []
+    func getArray() -> ([TaskStruct]) {
+        var array: [TaskStruct] = []
         for task in tasks {
-            array.append(["id": task.value(forKey: "id") as! UUID,
-                        "title": task.value(forKey: "title") as! String,
-                        "text": task.value(forKey: "text") as! String,
-                        "place": task.value(forKey: "place") as! String,
-                        "creationDate": task.value(forKey: "creationDate") as! Date,
-                        "deadLine": task.value(forKey: "deadLine") as! Date,
-                        "endDate": task.value(forKey: "endDate") as? Date,
-                        "status": task.value(forKey: "status") as! Bool])
+            array.append(TaskStruct(id: task.value(forKey: "id") as! UUID,
+                        title: task.value(forKey: "title") as! String,
+                        text: task.value(forKey: "text") as! String,
+                        place: task.value(forKey: "place") as! String,
+                        classifier: task.value(forKey: "classifier") as! String,
+                        creationDate: task.value(forKey: "creationDate") as! Date,
+                        deadLine: task.value(forKey: "deadLine") as! Date,
+                        endDate: task.value(forKey: "endDate") as? Date,
+                        status: task.value(forKey: "status") as! Bool))
         }
-        print(array)
+
+        array.sort { t1, t2 in
+            (t1.classifier, t1.deadLine) < (t2.classifier, t2.deadLine)
+        }
         return array
     }
 
-    func addTask(title: String, text: String, place: String, deadLine: Date) {
+    func addTask(title: String, text: String, place: String, deadLine: Date, classifier: String) {
         let currentDate = Date()
         let id = UUID()
 
@@ -63,7 +66,8 @@ class DataModel {
                                "text": text,
                                "place": place,
                                "creationDate": currentDate,
-                               "deadLine": deadLine])
+                               "deadLine": deadLine,
+                               "classifier": classifier])
 
         do {
             try context.save()
@@ -72,7 +76,6 @@ class DataModel {
         }
         tasks.append(task)
         print("TaskSaved")
-        dataChanged = true
     }
 
     func changeStatus(uuid: UUID) {
@@ -109,7 +112,6 @@ class DataModel {
         } catch let error as NSError {
             print("Saving Error! \(error), \(error.userInfo)")
         }
-
         loadData()
     }
 

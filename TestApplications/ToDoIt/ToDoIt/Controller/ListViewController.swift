@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TaskDetailViewDelegate: class {
-    func selectedTask(_ task: [String: Any?])
+    func selectedTask(_ task: TaskStruct)
 }
 
 class ListViewController: UIViewController {
@@ -20,7 +20,7 @@ class ListViewController: UIViewController {
     weak var taskDelegate: TaskDetailViewDelegate?
 
     private var dataManager = DataModel.shared
-    private var tasksArray: [[String: Any?]] = []
+    private var tasksArray: [TaskStruct] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,10 +63,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListViewCell
         else { return UITableViewCell() }
         let task = tasksArray[indexPath.row]
-        let state = task["status"] as! Bool
-        let title = task["title"] as? String
+        let state = task.status
+        let title = task.title
+        let priority = task.classifier
+        let deadLine = task.deadLine
         let currentDate = Date()
-        let deadLine = task["deadLine"] as! Date
         let calendar = Calendar.current.dateComponents([.hour, .day, .weekOfYear, .month], from: currentDate, to: deadLine)
         let deadLineString = "\(calendar.hour ?? 0) hours remaining"
 
@@ -74,6 +75,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.checkBox.addTarget(self, action: #selector(checkBoxBtnPressed), for: .touchUpInside)
         cell.titleLabel.text = title
         cell.deadLineLabel.text = deadLineString
+        cell.priorityLabel.text = priority
 
         if state {
             cell.checkBox.setImage(UIImage(named: "checkedBox"), for: .normal)
@@ -89,7 +91,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = tasksArray[indexPath.row]
-            let uuid = task["id"] as! UUID
+            let uuid = task.id
             dataManager.deleteTask(uuid: uuid)
             tasksArray = dataManager.getArray()
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -115,7 +117,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         let indx = IndexPath(row: index, section: 0)
         let box = (tableView.cellForRow(at: indx) as? ListViewCell)?.checkBox
         let task = tasksArray[index]
-        let id = task["id"] as! UUID
+        let id = task.id
 
         dataManager.changeStatus(uuid: id)
         if box?.imageView?.image == UIImage(named: "checkedBox") {

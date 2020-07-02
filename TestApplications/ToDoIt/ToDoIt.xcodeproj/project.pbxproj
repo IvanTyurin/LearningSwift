@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2244F32D4A498AC24A52DAF0 /* Pods_ToDoIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B3F7FBAC7D70632079F33E /* Pods_ToDoIt.framework */; };
+		E35FC10424ADDEEA00144F31 /* TaskStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35FC10324ADDEEA00144F31 /* TaskStruct.swift */; };
 		E3A90CBD24A9F4D800FFA66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A90CBC24A9F4D800FFA66C /* AppDelegate.swift */; };
 		E3A90CBF24A9F4D800FFA66C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A90CBE24A9F4D800FFA66C /* SceneDelegate.swift */; };
 		E3A90CC424A9F4D800FFA66C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3A90CC224A9F4D800FFA66C /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		81F1DEB556D1D56E08AE0B94 /* Pods-ToDoIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoIt.debug.xcconfig"; path = "Target Support Files/Pods-ToDoIt/Pods-ToDoIt.debug.xcconfig"; sourceTree = "<group>"; };
 		B8B3F7FBAC7D70632079F33E /* Pods_ToDoIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35FC10324ADDEEA00144F31 /* TaskStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStruct.swift; sourceTree = "<group>"; };
 		E3A90CB924A9F4D800FFA66C /* ToDoIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A90CBC24A9F4D800FFA66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3A90CBE24A9F4D800FFA66C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				E3A90CE324A9F6CF00FFA66C /* DataModel.swift */,
+				E35FC10324ADDEEA00144F31 /* TaskStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				E3A90CDE24A9F68D00FFA66C /* NewTaskViewController.swift in Sources */,
 				E3A90CE424A9F6CF00FFA66C /* DataModel.swift in Sources */,
 				E3A90CBF24A9F4D800FFA66C /* SceneDelegate.swift in Sources */,
+				E35FC10424ADDEEA00144F31 /* TaskStruct.swift in Sources */,
 				E3A90CE624A9FAA600FFA66C /* AuthViewController.swift in Sources */,
 				E3A90CE024A9F69100FFA66C /* DetailViewController.swift in Sources */,
 			);

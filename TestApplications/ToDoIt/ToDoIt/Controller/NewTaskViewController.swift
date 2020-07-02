@@ -15,6 +15,7 @@ class NewTaskViewController: UIViewController {
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var placeField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var classifierPicker: UISegmentedControl!
 
     private let dataManager = DataModel.shared
 
@@ -30,12 +31,15 @@ class NewTaskViewController: UIViewController {
     @IBAction func addBtnPressed(_ sender: UIButton) {
         let dbStateKey = "dbState"
         let defaults = UserDefaults.standard
-        guard let titleText = titleField.text else { return }
-        guard let descriptionText = descriptionField.text else { return }
-        guard let placeText = placeField.text else { return }
+        guard
+            let titleText = titleField.text,
+            let descriptionText = descriptionField.text,
+            let placeText = placeField.text,
+            let classifier = classifierPicker.titleForSegment(at: classifierPicker.selectedSegmentIndex)
+        else { return }
         let deadLine = datePicker.date
 
-        dataManager.addTask(title: titleText, text: descriptionText, place: placeText, deadLine: deadLine)
+        dataManager.addTask(title: titleText, text: descriptionText, place: placeText, deadLine: deadLine, classifier: classifier)
         defaults.set(true, forKey: dbStateKey)
         dismiss(animated: true, completion: nil)
     }

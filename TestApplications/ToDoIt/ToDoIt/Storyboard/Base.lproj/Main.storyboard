@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gdc-54-mYh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="45D-AF-xp7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tvf-mN-MyS">
-                                <rect key="frame" x="8" y="83" width="398" height="779"/>
+                                <rect key="frame" x="8" y="83" width="398" height="730"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neA-8X-liu">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
@@ -97,7 +97,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pjh-1l-Faw">
-                                        <rect key="frame" x="99" y="735" width="200" height="34"/>
+                                        <rect key="frame" x="99" y="686" width="200" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="8Aq-3C-O18"/>
                                         </constraints>
@@ -228,7 +228,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fn6-bW-Kpt">
-                                <rect key="frame" x="0.0" y="114" width="414" height="748"/>
+                                <rect key="frame" x="0.0" y="114" width="414" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCell" id="5h4-2R-VzF" customClass="ListViewCell" customModule="ToDoIt" customModuleProvider="target">
@@ -334,10 +334,45 @@
             </objects>
             <point key="canvasLocation" x="1911.594202898551" y="-62.276785714285708"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
+        <scene sceneID="RyS-a2-8tU">
+            <objects>
+                <viewController id="0Br-fE-HYy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c9q-xo-b25">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="d8t-Th-7Hk"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="fLP-m8-m8d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrN-en-0LI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="762"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="34c-7Q-rqY">
+            <objects>
+                <tabBarController id="45D-AF-xp7" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kq2-Zk-bXB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gdc-54-mYh" kind="relationship" relationship="viewControllers" id="VDa-6p-n7F"/>
+                        <segue destination="0Br-fE-HYy" kind="relationship" relationship="viewControllers" id="wUA-Pq-W7B"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R0l-1j-iZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="-62"/>
+        </scene>
+        <!--Tasks-->
         <scene sceneID="EHb-tN-dKh">
             <objects>
                 <navigationController id="gdc-54-mYh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tasks" image="pencil" catalog="system" id="Tv3-L1-S8f"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WAa-1R-D5j">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -481,7 +516,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UCd-rx-XUL">
-                                <rect key="frame" x="10" y="79" width="394" height="342"/>
+                                <rect key="frame" x="10" y="79" width="394" height="403.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wal-Xu-l4c">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
@@ -498,16 +533,42 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZY9-KP-kwx">
+                                        <rect key="frame" x="0.0" y="126" width="394" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78H-MX-T57">
+                                                <rect key="frame" x="0.0" y="0.0" width="54.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="ajB-5g-LAn">
+                                                <rect key="frame" x="64.5" y="0.0" width="329.5" height="32"/>
+                                                <segments>
+                                                    <segment title="A"/>
+                                                    <segment title="B"/>
+                                                    <segment title="C"/>
+                                                    <segment title="D"/>
+                                                </segments>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Eisenhower matrix classification used" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4I-dE-CsX">
+                                        <rect key="frame" x="0.0" y="165" width="394" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qam-d3-ebj">
-                                        <rect key="frame" x="0.0" y="126" width="394" height="216"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="394" height="216"/>
                                     </datePicker>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Pd-LR-fnE">
-                                <rect key="frame" x="169.5" y="431" width="75" height="33"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="169.5" y="492.5" width="75" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Add Task">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addBtnPressed:" destination="9qI-bo-s9C" eventType="touchUpInside" id="rO2-r7-3Ug"/>
@@ -530,6 +591,7 @@
                     <connections>
                         <outlet property="addButton" destination="7Pd-LR-fnE" id="IpF-PV-TLU"/>
                         <outlet property="backButton" destination="Ixv-Cy-37g" id="shE-jJ-LGS"/>
+                        <outlet property="classifierPicker" destination="ajB-5g-LAn" id="mJi-hg-RbM"/>
                         <outlet property="datePicker" destination="Qam-d3-ebj" id="5hm-ba-AqG"/>
                         <outlet property="descriptionField" destination="ZWi-dh-Sgt" id="zGz-jw-ws8"/>
                         <outlet property="placeField" destination="kbW-wG-jxd" id="cxZ-ir-WPF"/>
@@ -543,6 +605,8 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="uncheckedBox" width="30.5" height="30.5"/>
     </resources>
