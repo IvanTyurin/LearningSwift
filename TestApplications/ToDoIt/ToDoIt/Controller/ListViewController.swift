@@ -17,10 +17,10 @@ class ListViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
-    weak var taskDelegate: TaskDetailViewDelegate?
-
-    private var dataManager = DataModel.shared
     private var tasksArray: [TaskStruct] = []
+
+    weak var taskDelegate: TaskDetailViewDelegate?
+    private let dataManager = DataModel.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
