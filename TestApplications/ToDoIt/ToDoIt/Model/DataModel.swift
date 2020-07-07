@@ -17,7 +17,7 @@ class DataModel {
         let container = NSPersistentContainer(name: "ToDoIt")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                print("CoreData container error \(error), \(error.userInfo)")
             }
         })
         return container
@@ -83,6 +83,31 @@ class DataModel {
         }
         tasks.append(task)
         print("TaskSaved")
+    }
+
+    func editTask(editedTask: TaskStruct) {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TasksData")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", editedTask.id as CVarArg)
+
+        do {
+            let task = try context.fetch(fetchRequest)
+
+            if let updateTask = task.first {
+                updateTask.setValuesForKeys(["title": editedTask.title,
+                                             "text": editedTask.text,
+                                             "place": editedTask.place,
+                                             "deadLine": editedTask.deadLine,
+                                             "classifier": editedTask.classifier])
+
+                do {
+                    try context.save()
+                } catch let error as NSError {
+                    print("Saving Error! \(error), \(error.userInfo)")
+                }
+            }
+        } catch let error as NSError {
+            print("Fetch Error! \(error), \(error.userInfo)")
+        }
     }
 
     func changeStatus(uuid: UUID) {

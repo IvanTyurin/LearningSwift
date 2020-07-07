@@ -22,6 +22,7 @@
 		E3A90CE224A9F69C00FFA66C /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A90CE124A9F69C00FFA66C /* ListViewCell.swift */; };
 		E3A90CE424A9F6CF00FFA66C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A90CE324A9F6CF00FFA66C /* DataModel.swift */; };
 		E3A90CE624A9FAA600FFA66C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A90CE524A9FAA600FFA66C /* AuthViewController.swift */; };
+		E3C4434724B4807C00EE43A7 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C4434624B4807C00EE43A7 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E3A90CE124A9F69C00FFA66C /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 		E3A90CE324A9F6CF00FFA66C /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E3A90CE524A9FAA600FFA66C /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		E3C4434624B4807C00EE43A7 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		F7D54B9ACBE3653FE49B7D6A /* Pods-ToDoIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoIt.release.xcconfig"; path = "Target Support Files/Pods-ToDoIt/Pods-ToDoIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 				E3A90CDD24A9F68D00FFA66C /* NewTaskViewController.swift */,
 				E3A90CDF24A9F69100FFA66C /* DetailViewController.swift */,
 				E3A90CE124A9F69C00FFA66C /* ListViewCell.swift */,
+				E3C4434624B4807C00EE43A7 /* EditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				E3A90CBF24A9F4D800FFA66C /* SceneDelegate.swift in Sources */,
 				E35FC10424ADDEEA00144F31 /* TaskStruct.swift in Sources */,
 				E3A90CE624A9FAA600FFA66C /* AuthViewController.swift in Sources */,
+				E3C4434724B4807C00EE43A7 /* EditViewController.swift in Sources */,
 				E3A90CE024A9F69100FFA66C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,7 @@ class ListViewController: UIViewController {
 
     private var tasksArray: [TaskStruct] = []
 
-    weak var taskDelegate: TaskDetailViewDelegate?
+    private weak var taskDelegate: TaskDetailViewDelegate?
     private let dataManager = DataModel.shared
 
     override func viewDidLoad() {
