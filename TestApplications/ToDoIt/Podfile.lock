@@ -228,6 +228,9 @@ PODS:
     - FirebaseAnalytics (= 6.6.1)
   - Firebase/CoreOnly (6.27.0):
     - FirebaseCore (= 6.8.0)
+  - Firebase/Database (6.27.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 6.3.0)
   - Firebase/Firestore (6.27.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.16.0)
@@ -254,6 +257,9 @@ PODS:
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/Logger (~> 6.5)
     - nanopb (~> 1.30905.0)
+  - FirebaseDatabase (6.3.0):
+    - FirebaseCore (~> 6.8)
+    - leveldb-library (~> 1.22)
   - FirebaseFirestore (1.16.0):
     - abseil/algorithm (= 0.20200225.0)
     - abseil/base (= 0.20200225.0)
@@ -266,6 +272,8 @@ PODS:
     - "gRPC-C++ (~> 1.28.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 1.30905.0)
+  - FirebaseFirestoreSwift (0.3.0):
+    - FirebaseFirestore (>= 1.6.1, ~> 1.6)
   - FirebaseInstallations (1.4.0):
     - FirebaseCore (~> 6.8)
     - GoogleUtilities/Environment (~> 6.6)
@@ -336,7 +344,9 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
+  - Firebase/Database
   - Firebase/Firestore
+  - FirebaseFirestoreSwift
 
 SPEC REPOS:
   trunk:
@@ -347,7 +357,9 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
+    - FirebaseDatabase
     - FirebaseFirestore
+    - FirebaseFirestoreSwift
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -368,7 +380,9 @@ SPEC CHECKSUMS:
   FirebaseAuth: b85c064e0ac60f82486728d50a4803f235687302
   FirebaseCore: feda061cb1ee6d8ad4824f4a4a8ffbcfe284f595
   FirebaseCoreDiagnostics: 4505e4d4009b1d93f605088ee7d7764d5f0d1c84
+  FirebaseDatabase: 3d02ffa794ec174853c086cf87cf2dc79bd6da49
   FirebaseFirestore: 4291ab811ad323a2b807a4a481cd5df2e445a676
+  FirebaseFirestoreSwift: 0cda93628782ca5a817cfecd2a8c0187436c0ae5
   FirebaseInstallations: 293f567159b6d66d1c990f13bb868066096c94ec
   GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
   GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
@@ -381,6 +395,6 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: 4e977e3cbddede089604a127185b30efe79d557b
+PODFILE CHECKSUM: 6f5bb793141190c1f3e9648142209edf65e4b0b8
 
 COCOAPODS: 1.9.1

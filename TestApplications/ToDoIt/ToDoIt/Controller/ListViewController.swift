@@ -17,13 +17,16 @@ class ListViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
-    private var tasksArray: [TaskStruct] = []
-
-    private weak var taskDelegate: TaskDetailViewDelegate?
     private let dataManager = DataModel.shared
+    private let defaults = UserDefaults.standard
+    private let uploadKey = "TaskDataChanged"
+
+    private var tasksArray: [TaskStruct] = []
+    private weak var taskDelegate: TaskDetailViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(dataDownloaded), name: NSNotification.Name(rawValue: "FirebaseDataDownloaded"), object: nil)
         addButton.tintColor = .darkGray
         if !dataManager.checkFirebaseAuth() {
             showAuthAlert()
@@ -63,27 +66,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListViewCell
         else { return UITableViewCell() }
         let task = tasksArray[indexPath.row]
-        let state = task.status
-        let title = task.title
-        let priority = task.classifier
-        let deadLine = task.deadLine
-        let currentDate = Date()
-        let calendar = Calendar.current.dateComponents([.hour, .day, .weekOfYear, .month], from: currentDate, to: deadLine)
-        let deadLineString = "\(calendar.hour ?? 0) hours remaining"
-
+        cell.setData(data: task)
+        
         cell.checkBox.tag = indexPath.row
         cell.checkBox.addTarget(self, action: #selector(checkBoxBtnPressed), for: .touchUpInside)
-        cell.titleLabel.text = title
-        cell.deadLineLabel.text = deadLineString
-        cell.priorityLabel.text = priority
-
-        if state {
-            cell.checkBox.setImage(UIImage(named: "checkedBox"), for: .normal)
-            cell.checkBox.tintColor = .darkGray
-        } else {
-            cell.checkBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            cell.checkBox.tintColor = .systemGray3
-        }
         
         return cell
     }
@@ -109,14 +95,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     @objc private func checkBoxBtnPressed(sender: UIButton) {
-        stateChange(sender.tag)
-        print("Recive: ", sender.tag)
-    }
-
-    private func stateChange(_ index: Int) {
-        let indx = IndexPath(row: index, section: 0)
+        let indx = IndexPath(row: sender.tag, section: 0)
         let box = (tableView.cellForRow(at: indx) as? ListViewCell)?.checkBox
-        let task = tasksArray[index]
+        let task = tasksArray[sender.tag]
         let id = task.id
 
         dataManager.changeStatus(uuid: id)
@@ -127,5 +108,13 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             box?.setImage(UIImage(named: "checkedBox"), for: .normal)
             box?.tintColor = .systemGray3
         }
+
+        tasksArray = dataManager.getArray()
+        tableView.reloadRows(at: [indx], with: .automatic)
+    }
+
+    @objc private func dataDownloaded() {
+        tasksArray = dataManager.getArray()
+        tableView.reloadData()
     }
 }

@@ -133,10 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				E3A90CDB24A9F68600FFA66C /* ListViewController.swift */,
+				E3A90CE124A9F69C00FFA66C /* ListViewCell.swift */,
 				E3A90CE524A9FAA600FFA66C /* AuthViewController.swift */,
 				E3A90CDD24A9F68D00FFA66C /* NewTaskViewController.swift */,
 				E3A90CDF24A9F69100FFA66C /* DetailViewController.swift */,
-				E3A90CE124A9F69C00FFA66C /* ListViewCell.swift */,
 				E3C4434624B4807C00EE43A7 /* EditViewController.swift */,
 			);
 			path = Controller;
