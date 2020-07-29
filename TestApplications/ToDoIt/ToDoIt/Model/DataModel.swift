@@ -51,20 +51,31 @@ class DataModel {
         }
     }
 
-    func getArray() -> ([TaskStruct]) {
+    func getArray(level: Int) -> ([TaskStruct]) {
         if !tasks.isEmpty {
             array = []
+            let currentDate = Date()
 
             for task in tasks {
-                array.append(TaskStruct(id: task.value(forKey: "id") as! UUID,
-                            title: task.value(forKey: "title") as! String,
-                            text: task.value(forKey: "text") as! String,
-                            place: task.value(forKey: "place") as! String,
-                            classifier: task.value(forKey: "classifier") as! String,
-                            creationDate: task.value(forKey: "creationDate") as! Date,
-                            deadLine: task.value(forKey: "deadLine") as! Date,
-                            endDate: task.value(forKey: "endDate") as? Date,
-                            status: task.value(forKey: "status") as! Bool))
+                let deadLine = task.value(forKey: "deadLine") as! Date
+                let calendar = Calendar.current.dateComponents([.hour, .day, .weekOfYear, .month], from: currentDate, to: deadLine)
+
+                if level == 3 {
+                    let deadLineString = "\(calendar.hour ?? 0) hours remaining"
+                    appendTaskToArray(task, deadLineString)
+                }
+                if let week = calendar.weekOfYear, let hour = calendar.hour, week == 0, hour >= 0, level == 2 {
+                    let deadLineString = "\(calendar.hour ?? 0) hours remaining"
+                    appendTaskToArray(task, deadLineString)
+                }
+                if let day = calendar.day, day == 1, level == 1 {
+                    let deadLineString = "\(calendar.hour ?? 0) hours remaining"
+                    appendTaskToArray(task, deadLineString)
+                }
+                if let day = calendar.day, day < 1, level == 0 {
+                    let deadLineString = "\(calendar.hour ?? 0) hours remaining"
+                    appendTaskToArray(task, deadLineString)
+                }
             }
         } else {
             firebaseDataDownload()
@@ -74,6 +85,19 @@ class DataModel {
             (t1.classifier, t1.deadLine) < (t2.classifier, t2.deadLine)
         }
         return array
+    }
+
+    private func appendTaskToArray(_ task: NSManagedObject, _ deadLineString: String) {
+        array.append(TaskStruct(id: task.value(forKey: "id") as! UUID,
+                                title: task.value(forKey: "title") as! String,
+                                text: task.value(forKey: "text") as! String,
+                                place: task.value(forKey: "place") as! String,
+                                classifier: task.value(forKey: "classifier") as! String,
+                                creationDate: task.value(forKey: "creationDate") as! Date,
+                                deadLine: task.value(forKey: "deadLine") as! Date,
+                                endDate: task.value(forKey: "endDate") as? Date,
+                                status: task.value(forKey: "status") as! Bool,
+                                deadLineString: deadLineString))
     }
 
     func addTask(title: String, text: String, place: String, deadLine: Date, classifier: String) {
@@ -210,7 +234,8 @@ class DataModel {
                                 creationDate: (task.data()["creationDate"] as! Timestamp).dateValue(),
                                 deadLine: (task.data()["deadLine"] as! Timestamp).dateValue(),
                                 endDate: task.data()["endDate"] as? Timestamp != nil ? (task.data()["endDate"] as! Timestamp).dateValue() : nil,
-                                status: task.data()["status"] as! Bool
+                                status: task.data()["status"] as! Bool,
+                                deadLineString: ""
                             ))
                         }
 

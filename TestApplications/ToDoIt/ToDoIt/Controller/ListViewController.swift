@@ -16,17 +16,19 @@ class ListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     private let dataManager = DataModel.shared
     private let defaults = UserDefaults.standard
     private let uploadKey = "TaskDataChanged"
 
     private var tasksArray: [TaskStruct] = []
+    private var level = 0
     private weak var taskDelegate: TaskDetailViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(dataDownloaded), name: NSNotification.Name(rawValue: "FirebaseDataDownloaded"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: NSNotification.Name(rawValue: "FirebaseDataDownloaded"), object: nil)
         addButton.tintColor = .darkGray
         if !dataManager.checkFirebaseAuth() {
             showAuthAlert()
@@ -37,7 +39,8 @@ class ListViewController: UIViewController {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        tasksArray = dataManager.getArray()
+        level = segmentedControl.selectedSegmentIndex
+        tasksArray = dataManager.getArray(level: level)
         tableView.reloadData()
     }
 
@@ -54,6 +57,11 @@ class ListViewController: UIViewController {
 
         self.present(alert, animated: true, completion: nil)
         print("Alert Presented!")
+    }
+
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        level = sender.selectedSegmentIndex
+        fetchData()
     }
 }
 
@@ -79,7 +87,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             let task = tasksArray[indexPath.row]
             let uuid = task.id
             dataManager.deleteTask(uuid: uuid)
-            tasksArray = dataManager.getArray()
+            tasksArray = dataManager.getArray(level: level)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -109,12 +117,12 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             box?.tintColor = .systemGray3
         }
 
-        tasksArray = dataManager.getArray()
+        tasksArray = dataManager.getArray(level: level)
         tableView.reloadRows(at: [indx], with: .automatic)
     }
 
-    @objc private func dataDownloaded() {
-        tasksArray = dataManager.getArray()
+    @objc private func fetchData() {
+        tasksArray = dataManager.getArray(level: level)
         tableView.reloadData()
     }
 }

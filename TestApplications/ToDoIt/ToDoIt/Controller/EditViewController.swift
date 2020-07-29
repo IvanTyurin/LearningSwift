@@ -63,7 +63,8 @@ class EditViewController: UIViewController {
                                     creationDate: task.creationDate,
                                     deadLine: deadLine,
                                     endDate: task.endDate,
-                                    status: task.status)
+                                    status: task.status,
+                                    deadLineString: "")
 
         dataModel.editTask(editedTask: editedTask)
         detailTaskDelegate?.selectedTask(editedTask)

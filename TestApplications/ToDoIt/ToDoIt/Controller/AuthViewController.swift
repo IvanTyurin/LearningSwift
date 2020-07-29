@@ -51,10 +51,12 @@ class AuthViewController: UIViewController {
 
         if email != "" && password != ""{
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] (authResult, error) in
-                guard let strongSelf = self else { return }
+                guard let self = self else { return }
                 if error != nil {
-                    strongSelf.warningLabel.text = "Authentification error!"
-                    strongSelf.warningLabel.isHidden = false
+                    self.warningLabel.text = "Authentification error!"
+                    self.warningLabel.isHidden = false
+                } else {
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
         } else {
@@ -79,13 +81,13 @@ class AuthViewController: UIViewController {
 
         if email != "" && password != ""{
             Auth.auth().createUser(withEmail: email, password: password) { [weak self] (authResult, error) in
-                guard let strongSelf = self else { return }
+                guard let self = self else { return }
                 if error != nil {
-                    strongSelf.warningLabel.text = "Registration error!"
-                    strongSelf.warningLabel.isHidden = false
+                    self.warningLabel.text = "Registration error!"
+                    self.warningLabel.isHidden = false
                 }
                 if let _ = authResult?.user {
-                    strongSelf.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
         } else {
