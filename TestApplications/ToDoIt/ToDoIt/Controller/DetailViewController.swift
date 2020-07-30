@@ -14,7 +14,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var deadlineLabel: UILabel!
 
-    var recievedTask: TaskStruct?
+    private var recievedTask: TaskStruct?
+    private weak var editTaskDelegate: TaskDetailViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,13 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func editBtnPressed(_ sender: UIButton) {
+        guard let editVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "EditVC") as? EditViewController else { return }
+        editTaskDelegate = editVC
+        editVC.detailTaskDelegate = self
+        if let task = recievedTask {
+            editTaskDelegate?.selectedTask(task)
+            navigationController?.pushViewController(editVC, animated: true)
+        }
     }
 }
 

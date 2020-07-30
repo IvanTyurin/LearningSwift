@@ -13,15 +13,30 @@ class ListViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var deadLineLabel: UILabel!
-    
+
+    func setData(data: TaskStruct) {
+        let state = data.status
+        let title = data.title
+        let priority = data.classifier
+        let deadLineString = data.deadLineString
+
+        titleLabel.text = title
+        deadLineLabel.text = deadLineString
+        priorityLabel.text = priority
+
+        if state {
+            checkBox.setImage(UIImage(named: "checkedBox"), for: .normal)
+            checkBox.tintColor = .darkGray
+        } else {
+            checkBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
+            checkBox.tintColor = .systemGray3
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
         self.checkBox.setImage(UIImage(systemName: "circle"), for: .normal)
         checkBox.tintColor = .systemGray3
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
 }

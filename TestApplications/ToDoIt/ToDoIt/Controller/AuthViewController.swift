@@ -51,10 +51,16 @@ class AuthViewController: UIViewController {
 
         if email != "" && password != ""{
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] (authResult, error) in
-                guard let strongSelf = self else { return }
+                guard let self = self else { return }
                 if error != nil {
-                    strongSelf.warningLabel.text = "Authentification error!"
-                    strongSelf.warningLabel.isHidden = false
+                    self.warningLabel.text = "Authentification error!"
+                    self.warningLabel.isHidden = false
+                } else {
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
         } else {
@@ -79,13 +85,17 @@ class AuthViewController: UIViewController {
 
         if email != "" && password != ""{
             Auth.auth().createUser(withEmail: email, password: password) { [weak self] (authResult, error) in
-                guard let strongSelf = self else { return }
+                guard let self = self else { return }
                 if error != nil {
-                    strongSelf.warningLabel.text = "Registration error!"
-                    strongSelf.warningLabel.isHidden = false
+                    self.warningLabel.text = "Registration error!"
+                    self.warningLabel.isHidden = false
                 }
                 if let _ = authResult?.user {
-                    strongSelf.navigationController?.popViewController(animated: true)
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
         } else {
@@ -121,6 +131,22 @@ class AuthViewController: UIViewController {
     }
 
     @IBAction func forgotBtnPressed(_ sender: UIButton) {
-
+        guard let email = emailTextField.text else { return }
+        if email == "" {
+            warningLabel.text = "Please fill in the e-mail field"
+        } else {
+            Auth.auth().sendPasswordReset(withEmail: email) { error in
+                if error != nil {
+                    self.warningLabel.text = "Password recovery error"
+                    return
+                } else {
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
 }

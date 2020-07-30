@@ -18,4 +18,5 @@ struct TaskStruct {
     let deadLine: Date
     let endDate: Date?
     let status: Bool
+    let deadLineString: String?
 }

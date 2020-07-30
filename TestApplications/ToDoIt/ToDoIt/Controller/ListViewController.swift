@@ -16,14 +16,19 @@ class ListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    private let dataManager = DataModel.shared
+    private let defaults = UserDefaults.standard
+    private let uploadKey = "TaskDataChanged"
 
-    weak var taskDelegate: TaskDetailViewDelegate?
-
-    private var dataManager = DataModel.shared
     private var tasksArray: [TaskStruct] = []
+    private var level = 0
+    private weak var taskDelegate: TaskDetailViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: NSNotification.Name(rawValue: "FirebaseDataDownloaded"), object: nil)
         addButton.tintColor = .darkGray
         if !dataManager.checkFirebaseAuth() {
             showAuthAlert()
@@ -34,7 +39,8 @@ class ListViewController: UIViewController {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
 
-        tasksArray = dataManager.getArray()
+        level = segmentedControl.selectedSegmentIndex
+        tasksArray = dataManager.getArray(level: level)
         tableView.reloadData()
     }
 
@@ -52,6 +58,11 @@ class ListViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         print("Alert Presented!")
     }
+
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        level = sender.selectedSegmentIndex
+        fetchData()
+    }
 }
 
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -63,27 +74,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListViewCell
         else { return UITableViewCell() }
         let task = tasksArray[indexPath.row]
-        let state = task.status
-        let title = task.title
-        let priority = task.classifier
-        let deadLine = task.deadLine
-        let currentDate = Date()
-        let calendar = Calendar.current.dateComponents([.hour, .day, .weekOfYear, .month], from: currentDate, to: deadLine)
-        let deadLineString = "\(calendar.hour ?? 0) hours remaining"
-
+        cell.setData(data: task)
+        
         cell.checkBox.tag = indexPath.row
         cell.checkBox.addTarget(self, action: #selector(checkBoxBtnPressed), for: .touchUpInside)
-        cell.titleLabel.text = title
-        cell.deadLineLabel.text = deadLineString
-        cell.priorityLabel.text = priority
-
-        if state {
-            cell.checkBox.setImage(UIImage(named: "checkedBox"), for: .normal)
-            cell.checkBox.tintColor = .darkGray
-        } else {
-            cell.checkBox.setImage(UIImage(named: "uncheckedBox"), for: .normal)
-            cell.checkBox.tintColor = .systemGray3
-        }
         
         return cell
     }
@@ -93,7 +87,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             let task = tasksArray[indexPath.row]
             let uuid = task.id
             dataManager.deleteTask(uuid: uuid)
-            tasksArray = dataManager.getArray()
+            tasksArray = dataManager.getArray(level: level)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -109,14 +103,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     @objc private func checkBoxBtnPressed(sender: UIButton) {
-        stateChange(sender.tag)
-        print("Recive: ", sender.tag)
-    }
-
-    private func stateChange(_ index: Int) {
-        let indx = IndexPath(row: index, section: 0)
+        let indx = IndexPath(row: sender.tag, section: 0)
         let box = (tableView.cellForRow(at: indx) as? ListViewCell)?.checkBox
-        let task = tasksArray[index]
+        let task = tasksArray[sender.tag]
         let id = task.id
 
         dataManager.changeStatus(uuid: id)
@@ -127,5 +116,13 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             box?.setImage(UIImage(named: "checkedBox"), for: .normal)
             box?.tintColor = .systemGray3
         }
+
+        tasksArray = dataManager.getArray(level: level)
+        tableView.reloadRows(at: [indx], with: .automatic)
+    }
+
+    @objc private func fetchData() {
+        tasksArray = dataManager.getArray(level: level)
+        tableView.reloadData()
     }
 }
