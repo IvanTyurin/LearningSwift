@@ -18,10 +18,7 @@ class ListViewCell: UITableViewCell {
         let state = data.status
         let title = data.title
         let priority = data.classifier
-        let deadLine = data.deadLine
-        let currentDate = Date()
-        let calendar = Calendar.current.dateComponents([.hour, .day, .weekOfYear, .month], from: currentDate, to: deadLine)
-        let deadLineString = "\(calendar.hour ?? 0) hours remaining"
+        let deadLineString = data.deadLineString
 
         titleLabel.text = title
         deadLineLabel.text = deadLineString

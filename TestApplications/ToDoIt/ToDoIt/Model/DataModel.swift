@@ -61,11 +61,11 @@ class DataModel {
                 let calendar = Calendar.current.dateComponents([.hour, .day, .weekOfYear, .month], from: currentDate, to: deadLine)
 
                 if level == 3 {
-                    let deadLineString = "\(calendar.hour ?? 0) hours remaining"
+                    let deadLineString = "\(calendar.weekOfYear ?? 0) weeks \(calendar.day ?? 0) days \(calendar.hour ?? 0) hours remaining"
                     appendTaskToArray(task, deadLineString)
                 }
                 if let week = calendar.weekOfYear, let hour = calendar.hour, week == 0, hour >= 0, level == 2 {
-                    let deadLineString = "\(calendar.hour ?? 0) hours remaining"
+                    let deadLineString = "\(calendar.day ?? 0) days \(calendar.hour ?? 0) hours remaining"
                     appendTaskToArray(task, deadLineString)
                 }
                 if let day = calendar.day, day == 1, level == 1 {

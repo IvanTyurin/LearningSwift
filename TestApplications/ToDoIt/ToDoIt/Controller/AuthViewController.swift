@@ -56,7 +56,11 @@ class AuthViewController: UIViewController {
                     self.warningLabel.text = "Authentification error!"
                     self.warningLabel.isHidden = false
                 } else {
-                    self.navigationController?.popViewController(animated: true)
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
         } else {
@@ -87,7 +91,11 @@ class AuthViewController: UIViewController {
                     self.warningLabel.isHidden = false
                 }
                 if let _ = authResult?.user {
-                    self.navigationController?.popViewController(animated: true)
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
         } else {
@@ -123,6 +131,22 @@ class AuthViewController: UIViewController {
     }
 
     @IBAction func forgotBtnPressed(_ sender: UIButton) {
-
+        guard let email = emailTextField.text else { return }
+        if email == "" {
+            warningLabel.text = "Please fill in the e-mail field"
+        } else {
+            Auth.auth().sendPasswordReset(withEmail: email) { error in
+                if error != nil {
+                    self.warningLabel.text = "Password recovery error"
+                    return
+                } else {
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
+                    } else {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
 }
